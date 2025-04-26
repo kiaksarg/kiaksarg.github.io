@@ -1,0 +1,29 @@
+/* zoom-theme.css */
+
+/* 1) Light‐mode defaults (optional, this just re-declares it) */
+[data-rmiz-modal-overlay="visible"] {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  [data-rmiz-btn-zoom],
+  [data-rmiz-btn-unzoom] {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+  }
+  
+  /* 2) Dark‐mode overrides */
+  html.dark [data-rmiz-modal-overlay="visible"] {
+    /* dark overlay instead of white */
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  html.dark [data-rmiz-btn-zoom],
+  html.dark [data-rmiz-btn-unzoom] {
+    /* light buttons on dark background */
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+  }
+  /* (optionally tweak the “invisible until focus” zoom‐in button in dark too) */
+  html.dark [data-rmiz-btn-zoom]:not(:focus):not(:active) {
+    /* still clip it, but when revealed it’ll be light on dark */
+    clip-path: inset(50%);
+  }
+  

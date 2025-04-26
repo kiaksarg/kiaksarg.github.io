@@ -1,0 +1,100 @@
+---
+title: "Danish Business Management Platform"
+slug: danish-business-management-platform
+cover: danish-business-management-platform.png
+excerpt: "A comprehensive SaaS platform that integrates sales, invoicing, customer management, analytics, and advanced reporting to optimize business processes and decision-making."
+tags: [Software Development,Full-stack, SaaS, Invoicing, Analytics]
+skills: [NestJS, React, TypeScript, Chakra UI, MySQL, TypeORM, mTLS, Machine Learning, Docker]
+date: 2024-03-04
+showOnHome: true
+links:
+  article: https://arashg.dev/en-US/85/danish-billing-and-invoicing-web-application-screenshots
+  video: https://youtu.be/xbWc4o1EqEk
+  cv: /files/arashg-cv.pdf
+---
+
+<div className="max-w-5xl mx-auto space-y-12 py-12">
+
+{/* <!-- Cover / Home Dashboard --> */}
+  <div className="relative w-full aspect-[16/9] cursor-zoom-in">
+  <ZoomImage src="/danish-bm/business-management-platform-01.png" alt="Business Management Platform" fill />
+
+  </div>
+  
+
+{/* <!-- Introduction --> */}
+The Danish Business Management Platform is a SaaS solution built to automate and centralize essential business operations. It enhances operational efficiency, from sales processes to customer analytics, empowering businesses to make informed, data-driven decisions.
+
+---
+### 🔧 Technology Stack
+
+- **Backend:** NestJS · TypeScript · TypeORM
+- **Frontend:** React · TypeScript · Chakra UI
+- **Database:** MySQL
+- **DevOps & Security:** Docker · mTLS (Ubuntu)
+- **Advanced Analytics:** Machine Learning for predictive analytics
+
+---
+
+
+
+### Core Platform Features
+
+- **Secure Access Control:** Role-based authentication with tiered permissions.
+- **Customer & Product Management:** Efficiently manage customer information, transaction history, and product catalogs with pricing tiers.
+- **Advanced Invoicing:** Create, track, and export invoices with customizable reporting formats (Excel/PDF).
+- **Integrated Payments:** Record and track various payment methods (e.g., cash, cheque, bank transfers) alongside invoice reconciliation.
+- **Dynamic Reporting & Analytics:** Comprehensive and exportable analytics reports, visual dashboards, and data-driven insights to monitor business performance.
+- **Predictive Insights:** Utilize machine learning to forecast sales trends, analyze customer behavior, and detect anomalies.
+- **Enhanced Security:** mTLS-secured platform with restricted desktop client access to ensure maximum data protection.
+
+---
+<div className="space-y-0.5">
+  ▶️ **Platform Demonstration (Legacy Version):** [Watch on YouTube](https://youtu.be/xbWc4o1EqEk)  
+
+  <small><em>Note: This video reflects an earlier release of the platform; some features and UI elements have since changed.</em></small>
+</div>
+
+{/* <!-- YouTube Demo --> */}
+<div className="relative pt-[56.25%]">
+  <iframe
+    className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
+    src="https://www.youtube.com/embed/xbWc4o1EqEk"
+    title="Danish Business Management Platform Demo"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+
+---
+</div>
+
+### 📸 Screenshots
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {[
+    'business-management-platform-02.png',
+    'business-management-platform-03.png',
+    'business-management-platform-04.png',
+    'business-management-platform-05.png',
+    'business-management-platform-06.png',
+    'business-management-platform-07.png',
+    'business-management-platform-08png.png',
+    'business-management-platform-09.png'
+  ].map((file) => (
+      <div key={file} className="relative w-full aspect-[16/9] cursor-zoom-in">
+        <ZoomImage
+          key={file}
+          src={`/danish-bm/${file}`}
+          alt={file.replace(/-/g, ' ').replace('.png','')}
+          fill={"true"}
+          style={{ objectFit: 'cover' }}
+          className="rounded-2xl shadow-lg"
+        />
+      </div>
+  ))}
+</div>
+
+---
+
