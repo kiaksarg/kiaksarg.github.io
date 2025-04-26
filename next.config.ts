@@ -5,7 +5,6 @@ import { withContentCollections } from "@content-collections/next";
 
 const nextConfig: NextConfig = {
   output: "export", // static-export mode
-  trailingSlash: true, // /about/index.html
   pageExtensions: ["js", "jsx", "ts", "tsx"],
   images: { unoptimized: true },
 

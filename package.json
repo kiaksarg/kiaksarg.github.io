@@ -8,7 +8,7 @@
   "build":     "npm run cc:build && next build",
   "cc:build":  "content-collections build",
   "predeploy": "npm run build",
-  "deploy":    "gh-pages -d out",
+  "deploy":    "gh-pages -d out --nojekyll",
   "dev:next":  "next dev --turbopack",
   "build:next":"next build",
   "start":     "next start",
