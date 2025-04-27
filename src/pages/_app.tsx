@@ -8,8 +8,8 @@ import ThemeToggle from "../theme/theme-toggle";
 import MDXWrapper from "../components/MDXComponents";
 
 import "react-medium-image-zoom/dist/styles.css";
-import "../globals.css";
-import "../zoom-theme.css";
+import "../styles/globals.css";
+import "../styles/zoom-theme.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -50,7 +50,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </header>
 
         {/* ---------- Page ---------- */}
-        <main className="mx-auto max-w-screen-lg px-4">
+        <main className="mx-auto max-w-screen-lg px-4 min-h-screen py-12">
           <MDXWrapper>
             <Component {...pageProps} />
           </MDXWrapper>
