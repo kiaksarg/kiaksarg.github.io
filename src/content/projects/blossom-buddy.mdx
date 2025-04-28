@@ -1,0 +1,96 @@
+---
+title: "Blossom-Buddy: An Interactive Flowerpot to Inspire Healthy Habits"
+slug: blossom-buddy
+cover: blossom-buddy/blossom-buddy-cover.jpg
+excerpt: "A persuasive smart flowerpot that turns self-care into plant-care by linking personal task completion to a plant's water, nutrients, and light."
+tags: ["Prototyping","Interaction Design","Research through Design","HCI","Persuasive Technology","UX"]
+skills: ["Prototyping","Wizard of Oz","React.js","Figma","User Testing"]
+date: 2024-01-15
+showOnHome: true
+links:
+  article: "/files/blossom-buddy.pdf"
+---
+
+import { FileText } from 'lucide-react';
+
+<div className="mb-4">
+I developed Blossom-Buddy as a group project for the Prototyping Interaction course at Umeå University in Autumn 2023.
+</div>
+
+<div className="mb-4">
+  One core activity in the HCI discipline is the design of new and novel interactive computing systems in the form of prototypes. Such prototypes are created to bring a design idea to life, allowing for exploration, evaluation, improvement, and communication of the concept. In this essay, I reflect on the process of designing Blossom-Buddy (Figure 1) as a novel interactive computing system.
+</div>
+
+<figure className="my-8">
+  <img src="/blossom-buddy/blossom-buddy.jpg" alt="Blossom-Buddy Prototype" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Figure 1: Blossom-Buddy final prototype.</figcaption>
+</figure>
+
+## Blossom-Buddy Concept
+
+<div className="mb-4">
+  Blossom-Buddy addresses common struggles with habit-building and behavior change by tapping into our innate desire to care for living things. 
+  To maintain your plant's health, you must first complete your tasks. The system comprises:
+</div>
+<ul className="list-disc list-inside space-y-1 mb-6">
+  <li>Water and nutrient dispensers</li>
+  <li>Full-spectrum grow lights</li>
+  <li>An interactive digital screen displaying a virtual plant</li>
+</ul>
+
+<div className="mb-8">
+  Completing tasks—such as exercising, meditating, socializing, or reducing phone use—earns resources that keep your plant healthy and thriving.
+</div>
+
+## Prototyping Process
+
+<div className="mb-4">Throughout the Blossom-Buddy project, prototypes played a crucial role in developing and refining the design:</div>
+
+### Early Prototypes
+<p className="mb-4">Used primarily for ideation and communication, these prototypes clarified basic functionalities and guided the evolution of the initial concept.</p>
+<figure className="my-8">
+  <img src="/blossom-buddy/blossom-early-prototypes.png" alt="Early prototypes for Blossom-Buddy" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Figure 2: Early ideation prototypes.</figcaption>
+</figure>
+
+### Vertical Prototypes
+<div className="mb-4">These focused prototypes explored specific interactions in detail. We notably used React.js to prototype interactions quickly, assessing the usability of physical buttons and interface interactivity effectively.</div>
+<figure className="my-8">
+  <img src="/blossom-buddy/blossom-vertical-prototype.png" alt="Vertical prototype created in React" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Figure 3: React.js prototype for physical buttons interaction.</figcaption>
+</figure>
+
+### Integration Prototype
+<div className="mb-4">This comprehensive prototype combined all aspects of Blossom-Buddy. Though partially simulated using a <em>"Wizard of Oz"</em> technique, it allowed for effective lab-based user evaluations.</div>
+<figure className="my-8">
+  <img src="/blossom-buddy/blossom-figma.jpg" alt="Integrated prototype with Figma interface" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Figure 4: Figma interface.</figcaption>
+</figure>
+<figure className="my-8">
+  <img src="/blossom-buddy/blossom-figma-sad.png" alt="Figma interface sad version" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Figure 5: Figma interface, sad version.</figcaption>
+</figure>
+
+## Insights from User Tests
+
+<div className="mb-4">User evaluations revealed insights that shaped our understanding and future directions:</div>
+<ul className="list-disc list-inside space-y-1 mb-8">
+  <li>Participants instinctively preferred touchscreen interfaces over physical buttons, suggesting possible improvements in interaction design.</li>
+  <li>The status indicators for plant resources (water, nutrients, light) required clearer labeling and visual feedback.</li>
+  <li>Participants strongly related to the emotional feedback provided by the digital plant, suggesting emotional engagement is a critical motivational component.</li>
+</ul>
+
+## Reflections
+
+<div className="mb-4">Blossom-Buddy exemplifies Research through Design (RtD) by generating knowledge and raising new research questions about motivational technologies and behavior change. The prototypes acted not only as design tools but also as instruments for inquiry and discovery. They highlighted how personality differences influence user responses and opened questions about optimal friction in persuasive design. This project fostered my development of a <em>prototype mindset</em>, highlighting the power of simple, fast, and economical prototyping as critical in design exploration and research.</div>
+
+## Future Directions
+
+<div className="mb-4">Future iterations of Blossom-Buddy could:</div>
+<ul className="list-disc list-inside space-y-1 mb-6">
+  <li>Integrate with smartphones and wearable devices for automatic task tracking</li>
+  <li>Further explore the balance of friction in behavior-change technology</li>
+  <li>Conduct field studies with fully functional prototypes to gain deeper insights into long-term behavioral impacts</li>
+</ul>
+- <FileText className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **Download Report**: [Full project report](/blossom-buddy/blossom-buddy.pdf)
+- <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **React Prototype GitHub Repository**: [kiaksarg/blossom-buddy](https://github.com/kiaksarg/blossom-buddy)
