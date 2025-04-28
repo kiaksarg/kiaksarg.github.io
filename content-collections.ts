@@ -17,6 +17,7 @@ const projects = defineCollection({
       message: "Must be a valid date",
     }),
     showOnHome: z.boolean().default(false),
+    priority: z.number().default(0),
     links: z.any().optional(),
   }),
   transform: async (doc, ctx) => {
@@ -39,6 +40,7 @@ const blog = defineCollection({
       message: "Must be a valid date",
     }),
     showOnHome: z.boolean().default(false),
+    priority: z.number().default(0),
   }),
   transform: async (doc, ctx) => {
     const mdx = await compileMDX(ctx, doc);

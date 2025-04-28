@@ -23,6 +23,11 @@ export default function ProjectGrid() {
     ? all.filter((p) => (p.tags ?? []).includes(activeTag))
     : all;
 
+    visible.sort((a, b) => {     const pa = a.priority ?? Infinity; 
+      const pb = b.priority ?? Infinity; 
+      return pa - pb; 
+    });
+
   return (
     <>
       <FilterBar tags={tags} activeTag={activeTag} onTagClick={setActiveTag} />
