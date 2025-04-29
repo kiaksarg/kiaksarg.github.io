@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import type { MDXComponents } from "mdx/types";
 import React from "react";
 import Link from "next/link";
-import { Github, Globe, Youtube } from "lucide-react";
+import { Github, Globe, Youtube, Link2 } from "lucide-react";
 import { ZoomImage } from "./ZoomImage";
 
 // Custom anchor element for MDX links without underline or icon
@@ -55,7 +55,7 @@ export const mdxComponents: MDXComponents = {
   h2: (props) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} />,
 
   /* --- Text --- */
-  p: (props) => <p className="mb-4 leading-relaxed" {...props} />,  
+  // p: (props) => <p className="mb-4 leading-relaxed" {...props} />,  
   a: A,  // styled link component without underline or icon
 
   /* --- Images & Zoom --- */
@@ -65,6 +65,7 @@ export const mdxComponents: MDXComponents = {
   Github,
   Globe,
   Youtube,
+  Link2,
 };
 
 export default function MDXComponents({ children }: { children: React.ReactNode }) {

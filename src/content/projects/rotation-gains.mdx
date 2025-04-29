@@ -1,0 +1,129 @@
+---
+title: "User-Empowered Head Movement Techniques in Virtual Reality (VR)"
+slug: rotation-gains
+cover: vr-head-movements/vr-head-movements.png
+excerpt: "Master’s thesis project exploring novel head rotation amplification techniques to address limited physical movement in seated VR, enabling more effective 360° navigation and interaction."
+tags: [XR, VR, HCI, Interaction Design, Unity, Prototyping]
+skills: [Research, Prototyping, Unity]
+date: 2024-03-01
+showOnHome: true
+priority: 0
+links:
+  repo: https://github.com/kiaksarg/vr-head-rotation-amplification
+  demo: https://rotationgains.netlify.app
+---
+
+<img
+  src="/vr-head-movements/vr-head-movements.png"
+  alt="Cover image: Head Rotation Amplification"
+  className="my-4  rounded-xl shadow-md max-w-lg mx-auto"
+/>
+
+
+As part of my Master's thesis in Human-Computer Interaction (HCI) at Umeå University, supervised by Prof. Anders Lundström, I explored innovative head rotation amplification techniques in Virtual Reality (VR) specifically designed to overcome the challenges posed by physically restricted turning angles in seated VR environments. The project focused on exploring novel head rotation techniques enhancing user comfort, efficiency, and overall interaction experience.
+
+In seated VR, physical rotation is limited, making full 360° exploration difficult. Amplifying head movements increases the virtual rotation relative to physical movement, enabling users to explore virtual environments with less physical effort.
+
+## Implemented Prototype in Unity 3D
+
+
+
+
+  <div className="relative pt-[56.25%]">
+    <iframe
+      className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
+      src="https://www.youtube.com/embed/15Avg0FLA88"
+      title="Head Rotation Amplification Demo"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+
+
+# Techniques Developed
+
+## Constant Gain (Baseline)
+
+**Constant amplification:** Physical head rotation multiplied by a fixed factor. For example, a 30° turn becomes 60° in VR (gain = 2).
+
+
+## User‑Empowered (Manual) Gain
+
+**Manual amplification:** Users manually toggle between high and 1:1 normal mapping using VR controllers during ballistic (rapid rotation) and corrective phases for higher accuracy.
+
+## Automatic Gain
+
+**Dynamic adaptive amplification:**  Automatic gain adjustment based on head rotation velocity and acceleration to smoothly transition between high gain during ballistic movements and normal gain during precise alignment.
+
+
+# User Study
+
+A rigorous evaluation involving over 30 participants provided both qualitative and quantitative insights into the effectiveness of each method.
+
+## Metrics Collected
+<ul className="list-disc list-inside space-y-2 my-4">
+  <li className="mb-1"><strong>Task Completion Time</strong>: Time required to complete tasks.</li>
+  <li className="mb-1"><strong>Error Rate</strong>: The number of times targets were missed, and the angular deviation from the intended target.</li>
+  <li className="mb-1"><strong>Accumulated Offset</strong>: The overall angular difference between the task's starting and ending positions within the virtual environment.</li>
+  <li className="mb-1"><strong>Physical vs. Virtual Movement</strong>: Accumulated angular head movements were measured in both the physical and virtual environments.</li>
+  <li className="mb-1"><strong>NASA-TLX</strong>: User workload assessment.</li>
+  <li className="mb-1"><strong>Cybersickness in Virtual Reality Questionnaire (CSQ-VR)</strong>: Used to assess the level of motion sickness experienced in virtual reality across different techniques.</li>
+</ul>
+
+### Usability Questions Regarding
+<ul className="list-disc list-inside space-y-2 my-4">
+  <li className="mb-1"><strong>Comfort and Usability</strong>: User comfort levels and intuitive interaction.</li>
+  <li className="mb-1"><strong>Control and Precision</strong>: User comfort levels and the ease of interaction during tasks.</li>
+  <li className="mb-1"><strong>Naturalness and Applicability</strong>: How naturally the techniques felt and how applicable users found them for VR use.</li>
+</ul>
+
+## Qualitative User Feedback
+<div>User feedback was gathered through semi-structured interviews to explore the following areas:</div>
+<ul className="list-disc list-inside space-y-2 my-4">
+  <li className="mb-1">How users experienced amplified head rotation compared to normal 1:1 mapping.</li>
+  <li className="mb-1">How head rotation amplification affected users' sense of direction and spatial orientation.</li>
+  <li className="mb-1">Preferences between different amplification techniques (manual vs. automatic).</li>
+  <li className="mb-1">The impact of head rotation amplification on users' sense of immersion in the virtual environment.</li>
+</ul>
+
+<div>The interviews included questions about users' overall experience with each technique, perceived control and speed, ease of targeting, feelings of discomfort or motion sickness, and preferences for manual versus automatic amplification. Participants were also asked about their perception of space and immersion while using amplified head rotation.</div>
+
+<div>The qualitative data was analyzed using thematic analysis, which allowed me to identify key patterns and insights regarding user experiences and preferences related to head rotation amplification in VR.</div>
+
+## Tasks
+<figure className="my-8">
+  <img src="/vr-head-movements/180-task.gif" alt="Head Rotation Amplification, 180° Rotation Task" 
+  className="rounded-xl shadow-md max-w-xl mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">180° Rotation Task</figcaption>
+</figure>
+<figure className="my-8">
+  <img src="/vr-head-movements/90-180-tasks.gif" alt="Head Rotation Amplification, Small Bubbles Task (90° and 180° Conditions)" 
+  className="rounded-xl shadow-md max-w-xl mx-auto" />
+  <figcaption className="text-center text-sm text-gray-500">Small Bubbles Task (90° and 180° Conditions)</figcaption>
+</figure>
+
+# Resources & Further Reading
+
+### Links
+- <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **GitHub Repository**: [vr-head-rotation-amplification](https://github.com/kiaksarg/vr-head-rotation-amplification)
+- <Link2 className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **React Prototype**: [rotationgains.netlify.app](https://rotationgains.netlify.app)
+
+
+## Related Papers
+<ul className="list-disc list-inside space-y-2 my-4">
+  <li className="mb-1"><strong>Wang, C. et al. (2023)</strong> ‘On Rotation Gains Within and Beyond Perceptual Limitations for Seated VR’, IEEE Transactions on Visualization and Computer Graphics, 29(7).<br/>Contributions: detection thresholds of rotation gains, and applicability.</li>
+  <li className="mb-1"><strong>Langbehn, E. et al. (2019)</strong> ‘Turn Your Head Half Round: VR Rotation Techniques for Situations With Physically Limited Turning Angle’, in Proceedings of Mensch und Computer 2019. Association for Computing Machinery (MuC ’19), pp. 235–243.<br/>Contributions: Dynamic gain technique.</li>
+  <li className="mb-1"><strong>Wang, H. et al. (2024)</strong> ‘HeadShift: Head Pointing with Dynamic Control-Display Gain’, ACM Trans. Comput.-Hum. Interact. [Preprint].</li>
+</ul>
+
+
+
+## Study Poster
+        <div className="relative w-full aspect-[16/9] cursor-zoom-in">
+        <ZoomImage
+          src="/vr-head-movements/vr-head-movements-poster.png"
+          alt="Study Poster: Head Rotation Amplification User Study"
+          fill={"true"}
+          className="rounded-2xl shadow-lg max-w-sm mx-auto"
+        />
+      </div>
