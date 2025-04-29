@@ -1,0 +1,92 @@
+---
+title: "MVC Asp .Net Multilingual News & Blogging System"
+slug: asp-net-multilingual-news-blog-system
+cover: introd/introd-main-page.png
+excerpt: "A robust multilingual news & blogging platform built on ASP NET Core, with LTR/RTL support, dynamic authorization, and flexible database options."
+tags: [Web Development, ASP NET Core, Multilingual, Blogging]
+skills: [ASP NET Core, Entity Framework Core, SQL Server, MySQL, SQLite, Bootstrap, DNTIdentity]
+date: 2024-05-01
+showOnHome: true
+priority: 99
+---
+
+<div className="max-w-5xl mx-auto space-y-12 py-12">
+
+  {/* <!-- Cover / Main Page --> */}
+  <div className="relative w-full aspect-[16/9] cursor-zoom-in">
+    <ZoomImage
+      src="/introd/introd-main-page.png"
+      alt="News & Blogging System Main Page"
+      className="rounded-2xl shadow-lg max-w-4xl mx-auto"
+      fill
+    />
+  </div>
+
+  {/* <!-- Introduction --> */}
+  <div>   
+Developed a multilingual news and blogging platform using ASP.NET Core, enabling writers to publish, categorize, and manage articles in both left-to-right (LTR) languages (e.g., English, German) and right-to-left (RTL) languages (e.g., Persian, Arabic).
+
+</div>
+  ---
+  ### 🔧 Technology Stack
+  - **Framework:** ASP NET Core 6  
+  - **Data Access:** 
+    - Entity Framework Core (Code‐First)  
+    - Single transaction per‐request & unit of work pattern  
+    - Context pooling 
+  - **Databases:** SQL Server · MySQL · SQLite (configurable)  
+  - **UI:** Bootstrap 5 · Responsive grid & RTL/LTR styling  
+  - **Auth & Security:** Dynamic role‐based authorization  
+  - **Base Identity:** DNTIdentity extension for multi‐tenant user & role management  
+  ---
+  ### 🚀 Core Features
+
+  - **Multilingual Content:**  
+    - RTL/LTR support  
+    - Language picker with culture‐aware routing  
+  - **Flexible Data Stores:**  
+    - Choose between MSSQL, MySQL, or SQLite at deploy time  
+    - Seamless migrations via EF Core Code-First  
+  - **Robust Authorization:**  
+    - Dynamic policies & claims per language or category  
+    - Admin dashboard to assign permissions on the fly  
+  - **Performance & Reliability:**  
+    - Context pooling & efficient DbContext per request  
+    - Unit-of-work pattern  
+  - **Separation of Concerns:**  
+    - Clean layered architecture (Controllers → Services → Repositories)  
+    - Dependency Injection for easy testing & extension  
+  - **Responsive UI:**  
+    - Bootstrap‐powered layouts adapt to any screen  
+    - RTL support baked into SASS variables  
+
+  ---  
+  {/* <div className="space-y-0.5">
+    ▶️ **Explore on GitHub:** [View the project source](https://github.com/yourusername/multilingual-news-blog)  
+  </div> */}
+
+  {/* <!-- Screenshots --> */}
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {[
+    { src: '/introd/multilingual-news-blog-channel.png', alt: 'Channel Section' },
+    { src: '/introd/multilingual-news-blog-archive.png', alt: 'Archive Section (Year & Cat Filtering)' },
+    { src: '/introd/multilingual-news-admin.png', alt: 'Admin Area, New Post' },
+    { src: '/introd/multilingual-news-admin-posts.png', alt: 'Admin Area, Posts' },
+  ].map(({ src, alt }) => (
+    <div
+      key={src}
+      className="relative w-full h-[300px] max-h-[300px] cursor-zoom-in overflow-hidden"
+    >
+      <ZoomImage
+        src={src}
+        alt={alt}
+        fill
+        className="rounded-2xl shadow-lg"
+        style={{ objectFit: 'cover' }}
+      />
+    </div>
+  ))}
+</div>
+
+
+</div>
