@@ -13,8 +13,8 @@ export const metadata = {
 export default function ProjectsPage() {
   // sort by date descending
   const projects = allProjects
-    .slice()
-    .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+  .slice()
+  .sort((a, b) => a.priority - b.priority);
 
   return (
     <section className="max-w-screen-2xl mx-auto px-6 py-12">
