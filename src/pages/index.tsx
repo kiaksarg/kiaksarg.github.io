@@ -37,15 +37,15 @@ export default function HomePage() {
         <h1 className="text-4xl pb-6 text-black dark:text-white">
           Arash Goodarzi
         </h1>
-        <p className="text-xl text-justify text-gray-900 dark:text-gray-200">
+        <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
           Hello! I am a dedicated interaction designer and full-stack developer
           with a passion for building and optimizing interactive systems,
           websites, and applications. My research pertains to understanding how
           Human-Computer Interaction (HCI), Extended Reality (XR), and
           Artificial Intelligence (AI) technologies mediate user interactions
           and experiences. I approach my work through a multidisciplinary lens
-          that integrates computer science, cognitive & behavioral sciences, and
-          machine learning. I am particularly interested in developing
+           that integrates computer science and AI with HCI approaches. 
+           I am particularly interested in developing
           innovative interaction techniques within immersive environments,
           aiming to create solutions that enhance user experience and
           interaction effectiveness.
