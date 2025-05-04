@@ -1,7 +1,33 @@
 import Link from "next/link";
 import ProjectGrid from "../components/ProjectGrid";
+import { allProjects } from "content-collections"; // Import allProjects to get the total count
+import { useState } from "react";
+
+// Sort all projects initially based on priority for accurate total count and loading order
+const sortedProjects = [...allProjects].sort((a, b) => {
+  const pa = a.priority ?? Infinity;
+  const pb = b.priority ?? Infinity;
+  return pa - pb;
+});
+const totalProjectCount = sortedProjects.length;
+const INITIAL_LOAD_COUNT = 4; // Number of projects to show initially
+const LOAD_MORE_INCREMENT = 5; // Number of projects to load each time "Load More" is clicked
 
 export default function HomePage() {
+  const [visibleProjectCount, setVisibleProjectCount] =
+    useState(INITIAL_LOAD_COUNT);
+
+  // Function to handle loading more projects
+  const handleLoadMore = () => {
+    setVisibleProjectCount(
+      (prevCount) =>
+        Math.min(prevCount + LOAD_MORE_INCREMENT, totalProjectCount) // Increase count, but not beyond total
+    );
+  };
+
+  // Determine if the "Load More" button should be shown
+  const showLoadMoreButton = visibleProjectCount < totalProjectCount;
+
   return (
     <section className="container mx-auto px-6 py-12 space-y-16 bg-white text-black dark:bg-black dark:text-white">
       {/* Hero */}
@@ -9,7 +35,7 @@ export default function HomePage() {
         <h1 className="text-4xl pb-6 text-black dark:text-white">
           Arash Goodarzi
         </h1>
-        <p className="text-xl text-justify text-gray-800 dark:text-gray-200">
+        <p className="text-xl text-justify text-gray-900 dark:text-gray-200">
           Hello! I am a dedicated interaction designer and full-stack developer
           with a passion for building and optimizing interactive systems,
           websites, and applications. My research pertains to understanding how
@@ -34,19 +60,43 @@ export default function HomePage() {
         </Link> */}
       </div>
 
-      
       {/* Projects */}
       <div className="max-w-3xl mx-auto space-y-4">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-          <ProjectGrid />
+          <ProjectGrid limit={visibleProjectCount} />
         </div>
-        <Link
-          href="/projects"
-          className="text-sm text-blue-600 hover:underline dark:text-blue-400"
-        >
-          View all
-        </Link>
+
+        <div className="flex flex-col sm:flex-row items-center  gap-4 mt-6">
+          {/* Added flex container */}
+          {/* Conditionally render the "Load More" button */}
+          {showLoadMoreButton && (
+            <button
+              onClick={handleLoadMore}
+              className="px-6 py-2 border rounded
+             border-gray-700 text-gray-700 // Changed to gray-700 for light mode
+             dark:border-gray-200 dark:text-gray-200
+             hover:bg-gray-100 hover:border-gray-800 dark:hover:bg-gray-800 dark:hover:border-gray-100
+             active:bg-gray-200 dark:active:bg-gray-700
+             focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 // Adjusted ring color slightly
+             transition-colors duration-200
+             text-sm font-medium cursor-pointer"
+            >
+              Load More
+            </button>
+          )}
+          <Link
+            href="/projects"
+            className="inline-flex items-center px-3 py-1
+             text-blue-600 // Changed to blue-600 for light mode
+             rounded-md
+             hover:bg-blue-100 hover:text-blue-800 // Adjusted hover bg and text color for light mode
+             dark:text-blue-400 dark:hover:bg-gray-700 dark:hover:text-blue-200
+             transition duration-300 ease-in-out font-semibold"
+          >
+            View all projects →
+          </Link>
+        </div>
       </div>
 
       {/* Connect

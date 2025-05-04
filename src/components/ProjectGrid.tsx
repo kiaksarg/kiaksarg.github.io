@@ -1,13 +1,19 @@
+// components/ProjectGrid.js
 "use client";
 
 import { useState } from "react";
 import FilterBar from "./FilterBar";
- import Card from "./Card";
+import Card from "./Card";
 import { allProjects, Project } from "content-collections";
 
-export default function ProjectGrid() {
+// Define props type for TypeScript (optional but good practice)
+interface ProjectGridProps {
+  limit?: number; // Make limit optional
+}
+
+// Add the limit prop to the function signature
+export default function ProjectGrid({ limit }: ProjectGridProps) {
   const all: Project[] = allProjects;
-  //   const tags = Array.from(new Set(all.flatMap((p) => p.tags ?? [])));
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   const allowedTags = [
@@ -23,18 +29,27 @@ export default function ProjectGrid() {
     ? all.filter((p) => (p.tags ?? []).includes(activeTag))
     : all;
 
-    visible.sort((a, b) => {     const pa = a.priority ?? Infinity; 
-      const pb = b.priority ?? Infinity; 
-      return pa - pb; 
-    });
+  // Sort projects by priority
+  visible.sort((a, b) => {
+    const pa = a.priority ?? Infinity;
+    const pb = b.priority ?? Infinity;
+    return pa - pb;
+  });
+
+  // Apply the limit *after* filtering and sorting
+  const displayProjects = limit ? visible.slice(0, limit) : visible;
 
   return (
     <>
-      <FilterBar tags={tags} activeTag={activeTag} onTagClick={setActiveTag} />
+      {/* Only show FilterBar if no limit is applied (i.e., on the full projects page) */}
+      {!limit && (
+        <FilterBar tags={tags} activeTag={activeTag} onTagClick={setActiveTag} />
+      )}
 
-      {/* one column by default, two columns at md breakpoint */}
+      {/* Render the limited or full list of projects */}
       <div className="flex flex-col gap-6 max-w-3xl ">
-        {visible.map((p) => (
+        {/* Map over the potentially sliced array */}
+        {displayProjects.map((p) => (
           <Card
             key={p.slug}
             href={`/projects/${p.slug}`}
