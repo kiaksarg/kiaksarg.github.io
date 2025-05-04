@@ -1,33 +1,35 @@
 import Link from "next/link";
 import ProjectGrid from "../components/ProjectGrid";
-import { allProjects } from "content-collections"; // Import allProjects to get the total count
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-// Sort all projects initially based on priority for accurate total count and loading order
-const sortedProjects = [...allProjects].sort((a, b) => {
-  const pa = a.priority ?? Infinity;
-  const pb = b.priority ?? Infinity;
-  return pa - pb;
-});
-const totalProjectCount = sortedProjects.length;
-const INITIAL_LOAD_COUNT = 4; // Number of projects to show initially
-const LOAD_MORE_INCREMENT = 5; // Number of projects to load each time "Load More" is clicked
-
+const INITIAL_LOAD_COUNT = 4;
+const LOAD_MORE_INCREMENT = 5; // Your desired increment
 export default function HomePage() {
-  const [visibleProjectCount, setVisibleProjectCount] =
-    useState(INITIAL_LOAD_COUNT);
+  // State: How many projects we *request* ProjectGrid to display
+  const [displayLimit, setDisplayLimit] = useState(INITIAL_LOAD_COUNT);
+  // State: The *actual* number of projects matching the filter (reported by ProjectGrid)
+  const [actualFilteredCount, setActualFilteredCount] = useState<number | null>(
+    null
+  );
+
+  // Callback function passed to ProjectGrid to receive the filtered count
+  const handleVisibleCountChange = useCallback((count: number) => {
+    // console.log("HomePage received filtered count:", count);
+    setActualFilteredCount(count);
+  }, []); // Stable function reference
 
   // Function to handle loading more projects
   const handleLoadMore = () => {
-    setVisibleProjectCount(
-      (prevCount) =>
-        Math.min(prevCount + LOAD_MORE_INCREMENT, totalProjectCount) // Increase count, but not beyond total
+    setDisplayLimit((prevLimit) =>
+      // Increase the limit, capped by the actual number available after filtering
+      Math.min(prevLimit + LOAD_MORE_INCREMENT, actualFilteredCount ?? 0)
     );
   };
 
-  // Determine if the "Load More" button should be shown
-  const showLoadMoreButton = visibleProjectCount < totalProjectCount;
-
+  // Determine if the "Load More" button should be shown:
+  // Only if the actual count is known AND we are showing fewer than that count.
+  const showLoadMoreButton =
+    actualFilteredCount !== null && displayLimit < actualFilteredCount;
   return (
     <section className="container mx-auto px-6 py-12 space-y-16 bg-white text-black dark:bg-black dark:text-white">
       {/* Hero */}
@@ -64,7 +66,10 @@ export default function HomePage() {
       <div className="max-w-3xl mx-auto space-y-4">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-          <ProjectGrid limit={visibleProjectCount} />
+          <ProjectGrid
+            limit={displayLimit}
+            onVisibleCountChange={handleVisibleCountChange}
+          />
         </div>
 
         <div className="flex flex-col sm:flex-row items-center  gap-4 mt-6">

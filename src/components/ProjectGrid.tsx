@@ -1,18 +1,18 @@
 // components/ProjectGrid.js
 "use client";
 
-import { useState } from "react";
+// Import useEffect along with useState and useMemo
+import { useState, useMemo, useEffect } from "react";
 import FilterBar from "./FilterBar";
 import Card from "./Card";
 import { allProjects, Project } from "content-collections";
 
-// Define props type for TypeScript (optional but good practice)
 interface ProjectGridProps {
-  limit?: number; // Make limit optional
+  limit?: number;
+  onVisibleCountChange?: (count: number) => void;
 }
 
-// Add the limit prop to the function signature
-export default function ProjectGrid({ limit }: ProjectGridProps) {
+export default function ProjectGrid({ limit, onVisibleCountChange }: ProjectGridProps) {
   const all: Project[] = allProjects;
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
@@ -25,41 +25,56 @@ export default function ProjectGrid({ limit }: ProjectGridProps) {
   ];
   const tags = allowedTags;
 
-  const visible = activeTag
-    ? all.filter((p) => (p.tags ?? []).includes(activeTag))
-    : all;
+  const visible = useMemo(() => {
+    // console.log("Recalculating visible projects. Active tag:", activeTag);
+    const filtered = activeTag
+      ? all.filter((p) => (p.tags ?? []).includes(activeTag))
+      : all;
+    const sorted = [...filtered].sort((a, b) => {
+      const pa = a.priority ?? Infinity;
+      const pb = b.priority ?? Infinity;
+      return pa - pb;
+    });
+    return sorted;
+  }, [activeTag, all]);
 
-  // Sort projects by priority
-  visible.sort((a, b) => {
-    const pa = a.priority ?? Infinity;
-    const pb = b.priority ?? Infinity;
-    return pa - pb;
-  });
-
-  // Apply the limit *after* filtering and sorting
   const displayProjects = limit ? visible.slice(0, limit) : visible;
+
+  // Effect to notify parent about the count of potentially visible items
+  // *** Correction: This should be useEffect, not useState ***
+  useEffect(() => {
+    // Notify initially and whenever 'visible' count changes (due to filter)
+    // console.log("Visible count changed:", visible.length);
+    onVisibleCountChange?.(visible.length);
+  }, [visible.length, onVisibleCountChange]); // Correct dependencies
+
+
+  const handleTagClick = (tag: string | null) => {
+    // console.log("Setting active tag:", tag);
+    setActiveTag(tag);
+  };
 
   return (
     <>
-      {/* Only show FilterBar if no limit is applied (i.e., on the full projects page) */}
-      {!limit && (
-        <FilterBar tags={tags} activeTag={activeTag} onTagClick={setActiveTag} />
-      )}
-
-      {/* Render the limited or full list of projects */}
-      <div className="flex flex-col gap-6 max-w-3xl ">
-        {/* Map over the potentially sliced array */}
-        {displayProjects.map((p) => (
-          <Card
-            key={p.slug}
-            href={`/projects/${p.slug}`}
-            title={p.title}
-            description={p.excerpt}
-            cover={p.cover}
-            tags={p.tags}
-            date={p.date}
-          />
-        ))}
+      <FilterBar tags={tags} activeTag={activeTag} onTagClick={handleTagClick} />
+      <div className="flex flex-col gap-6 max-w-3xl mt-6">
+        {displayProjects.length > 0 ? (
+            displayProjects.map((p) => (
+              <Card
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                title={p.title}
+                description={p.excerpt}
+                cover={p.cover}
+                tags={p.tags}
+                date={p.date}
+              />
+            ))
+        ) : (
+            <p className="text-gray-500 dark:text-gray-400 text-center py-4">
+                No projects found matching the selected filter.
+            </p>
+        )}
       </div>
     </>
   );

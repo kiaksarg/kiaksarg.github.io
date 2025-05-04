@@ -43,6 +43,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <nav className="flex items-center space-x-6 text-sm uppercase">
               <Nav href="/">Home</Nav>
               <Nav href="/projects">Projects</Nav>
+              <Nav href="/teaching">Teaching</Nav>
               <Nav href="/blog">Blog</Nav>
               <ThemeToggle />
             </nav>
