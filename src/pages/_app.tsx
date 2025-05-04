@@ -12,6 +12,7 @@ import MDXWrapper from "../components/MDXComponents"; // Assuming this path is c
 import "react-medium-image-zoom/dist/styles.css";
 import "../styles/globals.css";
 import "../styles/zoom-theme.css";
+import Head from "next/head";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -34,6 +35,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       enableSystem
       disableTransitionOnChange
     >
+      <Head>
+        {/* SVG for modern, sharp scaling */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        {/* Fallback PNGs */}
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+      </Head>
       <div
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black dark:bg-black dark:text-white scroll-smooth`}
       >
@@ -97,7 +109,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </header>
 
         {/* ---------- Page ---------- */}
-        <main className="mx-auto max-w-screen-lg px-4 min-h-screen py-12">
+        <main className="mx-auto max-w-screen-lg px-4 min-h-screen pb-8">
           <MDXWrapper>
             <Component {...pageProps} />
           </MDXWrapper>
