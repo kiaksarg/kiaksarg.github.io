@@ -54,7 +54,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           {/* Main flex container: justify-between pushes left/right groups apart */}
           <div className="mx-auto max-w-screen-lg flex items-center justify-between px-4 py-4">
             {/* Left Group: Logo + Main Navigation */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 sm:gap-6">
               <Link href="/" aria-label="Homepage Logo">
                 <Image
                   src="/logo.png"
@@ -65,16 +65,32 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   priority
                 />
               </Link>
-              <nav className="flex items-center gap-4 text-sm uppercase overflow-x-auto flex-nowrap hide-scrollbar">
+              <nav
+                className="
+                pb-0.5 sm:pb-0
+        flex items-center
+        gap-2 sm:gap-4
+        text-sm uppercase
+        overflow-x-auto
+        flex-nowrap
+        hide-scrollbar
+        min-w-0
+nav-limit-width-below-340"
+              >
                 <Nav href="/">Home</Nav>
                 <Nav href="/projects">Projects</Nav>
                 <Nav href="/teaching">Teaching</Nav>
-                <Nav href="/blog">Blog</Nav>
+                <Link
+                  href="/blog"
+                  className="hidden sm:inline-block text-black dark:text-white hover:text-blue-400 transition-colors duration-200 font-medium tracking-wide"
+                >
+                  Blog
+                </Link>
               </nav>
             </div>
 
             {/* Right Group: GitHub Link + CV Link + Theme Toggle */}
-            <div className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
               {/* GitHub Link */}
               <a
                 href={GITHUB_URL}
@@ -101,7 +117,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 className="
       text-gray-500 dark:text-gray-400 /* Base color (Light mode slightly darker) */
       hover:text-gray-700 dark:hover:text-gray-300 /* Hover color */
-      transition-colors duration-200
+      transition-colors hidden sm:inline-block duration-200
     "
               >
                 <TbFileCv size={ICON_SIZE} />

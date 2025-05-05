@@ -25,3 +25,14 @@
   /* color: var(--foreground); */
   /* font-family: Helvetica, sans-serif, Arial; */
 /* } */
+
+
+.nav-limit-width-below-340 {
+  max-width: 150px; /* Or your desired max-width */
+}
+
+@media (min-width: 340px) {
+  .nav-limit-width-below-340 {
+    max-width: none; /* Remove the max-width at 340px and above */
+  }
+}
