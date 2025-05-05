@@ -65,7 +65,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   priority
                 />
               </Link>
-              <nav className="hidden sm:flex items-center gap-4 text-sm uppercase">
+              <nav className="flex items-center gap-4 text-sm uppercase overflow-x-auto flex-nowrap hide-scrollbar">
                 <Nav href="/">Home</Nav>
                 <Nav href="/projects">Projects</Nav>
                 <Nav href="/teaching">Teaching</Nav>
@@ -74,7 +74,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             </div>
 
             {/* Right Group: GitHub Link + CV Link + Theme Toggle */}
-            {/* Adjusted gap for potentially smaller icons */}
             <div className="flex items-center gap-3 md:gap-4">
               {/* GitHub Link */}
               <a
@@ -83,11 +82,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
                 title="GitHub Profile"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+                className="
+      text-gray-500 dark:text-gray-400  /* Base color (Light mode slightly darker) */
+      hover:text-gray-700 dark:hover:text-gray-300 /* Hover color */
+      transition-colors duration-200
+    "
               >
-                {/* Use FaGithub from react-icons */}
                 <FaGithub size={ICON_SIZE} />
               </a>
+
               {/* CV Link */}
               <a
                 href={CV_URL}
@@ -95,11 +98,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 rel="noopener noreferrer"
                 aria-label="Download CV"
                 title="Download CV"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+                className="
+      text-gray-500 dark:text-gray-400 /* Base color (Light mode slightly darker) */
+      hover:text-gray-700 dark:hover:text-gray-300 /* Hover color */
+      transition-colors duration-200
+    "
               >
-                {/* Use TbFileCv from react-icons */}
                 <TbFileCv size={ICON_SIZE} />
               </a>
+
               {/* Theme Toggle */}
               <ThemeToggle />
             </div>
