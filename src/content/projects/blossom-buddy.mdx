@@ -22,11 +22,15 @@ I developed Blossom-Buddy as a group project for the Prototyping Interaction cou
   One core activity in the HCI discipline is the design of new and novel interactive computing systems in the form of prototypes. Such prototypes are created to bring a design idea to life, allowing for exploration, evaluation, improvement, and communication of the concept. In this essay, I reflect on the process of designing Blossom-Buddy (Figure 1) as a novel interactive computing system.
 </div>
 
-<figure className="my-8">
-  <img src="/blossom-buddy/blossom-buddy.jpg" alt="Blossom-Buddy Prototype" className="rounded-xl shadow-md max-w-sm mx-auto" />
-  <figcaption className="text-center text-sm text-gray-500">Figure 1: Blossom-Buddy final prototype.</figcaption>
-</figure>
+<div className="max-w-md mx-auto">
+  <figure className="my-8">
+      <div className="relative w-full aspect-[2/2.3] cursor-zoom-in">
+    <ZoomImage src="/blossom-buddy/blossom-buddy.jpg" alt="Business Management Platform" fill />
 
+    </div>
+    <figcaption className="text-center text-sm text-gray-500 max-w-full">Figure 1: Blossom-Buddy final prototype.</figcaption>
+  </figure>
+</div>
 ## Blossom-Buddy Concept
 
 <div className="mb-4">
@@ -49,26 +53,60 @@ I developed Blossom-Buddy as a group project for the Prototyping Interaction cou
 
 ### Early Prototypes
 <p className="mb-4">Used primarily for ideation and communication, these prototypes clarified basic functionalities and guided the evolution of the initial concept.</p>
+
 <figure className="my-8">
-  <img src="/blossom-buddy/blossom-early-prototypes.png" alt="Early prototypes for Blossom-Buddy" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <img src="/blossom-buddy/blossom-early-prototypes.png" alt="Early prototypes for Blossom-Buddy" className="
+      w-full                        /* fill the container on phones          */
+      max-w-xs                      /* 20 rem cap by default (≤ sm)          */
+      sm:max-w-sm                   /* 24 rem cap at ≥ 640 px                */
+      md:max-w-md                   /* 28 rem cap at ≥ 768 px                */
+      lg:max-w-md                   /* 32 rem cap at ≥ 1024 px               */
+      xl:max-w-md                   /* 36 rem cap at ≥ 1280 px (optional)    */
+      mx-auto rounded-xl shadow-md
+  
+  " />
   <figcaption className="text-center text-sm text-gray-500">Figure 2: Early ideation prototypes.</figcaption>
 </figure>
-
 ### Vertical Prototypes
 <div className="mb-4">These focused prototypes explored specific interactions in detail. We notably used React.js to prototype interactions quickly, assessing the usability of physical buttons and interface interactivity effectively.</div>
 <figure className="my-8">
-  <img src="/blossom-buddy/blossom-vertical-prototype.png" alt="Vertical prototype created in React" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <img src="/blossom-buddy/blossom-vertical-prototype.png" alt="Vertical prototype created in React" className="    
+      w-full                        /* fill the container on phones          */
+      max-w-xs                      /* 20 rem cap by default (≤ sm)          */
+      sm:max-w-sm                   /* 24 rem cap at ≥ 640 px                */
+      md:max-w-md                   /* 28 rem cap at ≥ 768 px                */
+      lg:max-w-md                   /* 32 rem cap at ≥ 1024 px               */
+      xl:max-w-md                   /* 36 rem cap at ≥ 1280 px (optional)    */
+      mx-auto rounded-xl shadow-md" />
   <figcaption className="text-center text-sm text-gray-500">Figure 3: React.js prototype for physical buttons interaction.</figcaption>
 </figure>
 
 ### Integration Prototype
 <div className="mb-4">This comprehensive prototype combined all aspects of Blossom-Buddy. Though partially simulated using a <em>"Wizard of Oz"</em> technique, it allowed for effective lab-based user evaluations.</div>
 <figure className="my-8">
-  <img src="/blossom-buddy/blossom-figma.jpg" alt="Integrated prototype with Figma interface" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <img src="/blossom-buddy/blossom-figma.jpg" alt="Integrated prototype with Figma interface" className="
+      w-full                        /* fill the container on phones          */
+      max-w-xs                      /* 20 rem cap by default (≤ sm)          */
+      sm:max-w-sm                   /* 24 rem cap at ≥ 640 px                */
+      md:max-w-md                   /* 28 rem cap at ≥ 768 px                */
+      lg:max-w-md                   /* 32 rem cap at ≥ 1024 px               */
+      xl:max-w-md                   /* 36 rem cap at ≥ 1280 px (optional)    */
+      mx-auto rounded-xl shadow-md
+  
+  " />
   <figcaption className="text-center text-sm text-gray-500">Figure 4: Figma interface.</figcaption>
 </figure>
 <figure className="my-8">
-  <img src="/blossom-buddy/blossom-figma-sad.png" alt="Figma interface sad version" className="rounded-xl shadow-md max-w-sm mx-auto" />
+  <img src="/blossom-buddy/blossom-figma-sad.png" alt="Figma interface sad version" className="
+      w-full                        /* fill the container on phones          */
+      max-w-xs                      /* 20 rem cap by default (≤ sm)          */
+      sm:max-w-sm                   /* 24 rem cap at ≥ 640 px                */
+      md:max-w-md                   /* 28 rem cap at ≥ 768 px                */
+      lg:max-w-md                   /* 32 rem cap at ≥ 1024 px               */
+      xl:max-w-md                   /* 36 rem cap at ≥ 1280 px (optional)    */
+      mx-auto rounded-xl shadow-md
+  
+  " />
   <figcaption className="text-center text-sm text-gray-500">Figure 5: Figma interface, sad version.</figcaption>
 </figure>
 
