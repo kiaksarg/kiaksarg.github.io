@@ -68,14 +68,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <nav
                 className="
                 pb-0.5 sm:pb-0
-        flex items-center
-        gap-2 sm:gap-4
-        text-sm uppercase
-        overflow-x-auto
-        flex-nowrap
-        hide-scrollbar
-        min-w-0
-nav-limit-width-below-340"
+                flex items-center
+                gap-2 sm:gap-4
+                text-sm uppercase
+                overflow-x-auto
+                flex-nowrap
+                hide-scrollbar
+                min-w-0
+                nav-limit-width-below-340"
               >
                 <Nav href="/">Home</Nav>
                 <Nav href="/projects">Projects</Nav>
