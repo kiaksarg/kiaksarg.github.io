@@ -12,7 +12,7 @@ const TeachingPage: React.FC = () => {
     { name: 'Human-Computer Interaction', term: 'Autumn 2024' },
     { name: 'Data Structures and Algorithms (Python)', term: 'Spring 2024 & 2025' },
     { name: 'Interaction Techniques', term: 'Spring 2024 & 2025' },
-    { name: 'Development of Mobile Applications', term: '(Spring & Summer 2025)' },
+    { name: 'Development of Mobile Applications', term: 'Spring & Summer 2025' },
   ];
 
   return (
