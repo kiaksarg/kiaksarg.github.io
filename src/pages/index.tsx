@@ -2,7 +2,7 @@ import Link from "next/link";
 import ProjectGrid from "../components/ProjectGrid";
 import { useState, useCallback } from "react";
 
-const INITIAL_LOAD_COUNT = 4;
+const INITIAL_LOAD_COUNT = 5;
 const LOAD_MORE_INCREMENT = 5; // Your desired increment
 export default function HomePage() {
   // State: How many projects we *request* ProjectGrid to display
