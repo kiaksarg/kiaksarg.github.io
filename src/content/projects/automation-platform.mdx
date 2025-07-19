@@ -1,0 +1,79 @@
+---
+title: "Identity Services Automation Platform"
+slug: automation-platform
+cover: automation-platform/automation-platform-cover.jpg
+excerpt: "A full‑stack platform that automates and manages the reissuing process for identity documents at service counters"
+tags: [Software Development, Full-stack, ASP.NET MVC, Automation]
+skills: [ASP.NET MVC, Entity Framework, SQL Server, Bootstrap, Automation]
+date: 2016-11-12
+showOnHome: true
+priority: 90
+---
+
+<div className="max-w-5xl mx-auto space-y-12 py-12">
+
+{/* <!-- Cover Screenshot --> */}
+  <div className="relative w-full aspect-[16/9] cursor-zoom-in">
+    <ZoomImage src="/automation-platform/01.jpg" alt="Identity Services Automation Platform - Cover" fill />
+  </div>
+
+{/* <!-- Introduction --> */}
+The **Identity Services Automation Platform** was built to digitize and streamline workflows between service counters and civil registry offices. Developed with **ASP.NET MVC**, **Entity Framework**, and **Microsoft SQL Server**, it replaces manual, paper‑based procedures with secure, transparent, and traceable digital processes.
+Service counters submit identity document requests—such as certificate changes—and track each request through its full lifecycle, with role‑based access control, time‑stamped status updates, and automated notifications. The platform increases accountability, reduces processing time, and gives all stakeholders clear visibility into request progress.
+
+---
+
+
+## 🔧 Technology Stack
+
+- **Backend:** ASP.NET MVC · Entity Framework
+- **Frontend:** Razor Views (ASP.NET MVC) · Bootstrap
+- **Database:** Microsoft SQL Server
+
+---
+
+## Core Features
+
+- **Request Submission & Tracking:**  
+  Service counters submit requests (e.g., identity certificate changes) and monitor progress in real time.
+- **Role-Based Access Control:**  
+  Different roles (e.g., counter staff, registry officers) with authentication and authorization.
+- **Detailed Status Updates:**  
+  Each request moves through a defined workflow, with time-stamped actions and comments.
+- **Decision Logging:**  
+  Registry staff can accept, reject, or request revisions, with full traceability of all actions.
+- **Automated Notifications:**  
+  Users are notified of request status changes, ensuring timely action.
+- **Centralized Dashboard:**  
+  Overview of pending, in-progress, and completed requests for efficient workload management.
+
+---
+
+### 📸 Screenshots
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {[
+    '01.jpg',
+    '02.jpg',
+    '03.jpg',
+    '04.jpg',
+    '05.jpg',
+    '06.jpg',
+    '07.jpg',
+    '08.jpg'
+  ].map((file) => (
+      <div key={file} className="relative w-full aspect-[16/9] cursor-zoom-in">
+        <ZoomImage
+          src={`/automation-platform/${file}`}
+          alt={file.replace(/-/g, ' ').replace('.png','')}
+          fill={"true"}
+          style={{ objectFit: 'cover' }}
+          className="rounded-2xl shadow-lg"
+        />
+      </div>
+  ))}
+</div>
+
+---
+
+</div>
