@@ -46,7 +46,7 @@ export default function HomePage() {
           and experiences. I approach my work through a multidisciplinary lens
            that integrates computer science and AI with HCI approaches. 
            I am particularly interested in developing
-          innovative interaction techniques within immersive environments,
+          novel interaction techniques within immersive environments,
           aiming to create solutions that enhance user experience and
           interaction effectiveness.
         </p>
