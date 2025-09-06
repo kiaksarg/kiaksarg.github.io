@@ -22,8 +22,27 @@ links:
 
 As part of my Master's thesis in Human-Computer Interaction (HCI) at Umeå University, supervised by Prof. Anders Lundström, I explored novel head rotation amplification techniques in Virtual Reality (VR) specifically designed to overcome the challenges posed by physically restricted turning angles in seated VR environments. The project focused on exploring novel head rotation techniques enhancing user comfort, efficiency, and overall interaction experience.
 
-In seated VR, physical rotation is limited, making full 360° exploration difficult. Amplifying head movements increases the virtual rotation relative to physical movement, enabling users to explore virtual environments with less physical effort.
-
+{/* In seated VR, physical rotation is limited, making full 360° exploration difficult. Amplifying head movements increases the virtual rotation relative to physical movement, enabling users to explore virtual environments with less physical effort. */}
+<div className="font-semibold uppercase tracking-wide mb-0 mt-8">Abstract</div>
+<div className=" p-2   rounded-md italic text-gray-700 dark:text-gray-300 leading-relaxed">
+  In seated VR, where large physical turns are limited, altering the mapping between
+  physical and virtual movements can amplify head rotation, enabling efficient view
+  control with reduced physical effort. This thesis introduces two amplified head
+  rotation (AHR) techniques for seated VR: the user-empowered <strong>Interactive</strong>,
+  which affords user-timed switching between high and low gain, and <strong>Adaptive</strong>,
+  which adjusts gain automatically based on head-motion kinematics. We evaluated both
+  techniques in a mixed-methods study (n=31), compared with a <strong>Constant</strong> constant-gain
+  baseline (g=2.5) across a head-pointing task and a 180° rotation task. Both
+  <strong>Interactive</strong> and <strong>Adaptive</strong> improved head-pointing performance relative
+  to <strong>Constant</strong>, while increasing physical head movement; cybersickness remained
+  low and virtual–physical heading offsets were generally modest. Qualitatively,
+  participants valued <strong>Interactive</strong> for the agency and control of user-timed
+  switching, including its use as a form of user-initiated redirected viewing, whereas
+  <strong>Adaptive</strong> reduced cognitive load but could occasionally mis-time against user
+  intent. Together, the findings highlight the potential of visible, user-centered AHR
+  as an interaction technique for seated VR, with promising feedback on giving users
+  control over rotational gains.
+</div>
 ## Implemented Prototype in Unity 3D
 
 
@@ -56,9 +75,10 @@ In seated VR, physical rotation is limited, making full 360° exploration diffic
 **Dynamic adaptive amplification:**  Automatic gain adjustment based on head rotation velocity and acceleration to smoothly transition between high gain during ballistic movements and normal gain during precise alignment.
 
 
-# User Study
+# Study Design
 
-A rigorous evaluation involving over 30 participants provided both qualitative and quantitative insights into the effectiveness of each method.
+We conducted a mixed-methods, within-subjects evaluation comparing three rotational gain techniques for seated VR: **Constant** (fixed gain 2.5×), **Interactive** (user-timed switching), and **Adaptive** (automatic adjustment based on head-motion kinematics).   
+31 participants performed two tasks (head-pointing and 180° rotation) under all techniques in randomized order.  
 
 ## Metrics Collected
 <ul className="list-disc list-inside space-y-2 my-4">
