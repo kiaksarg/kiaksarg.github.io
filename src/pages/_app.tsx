@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   // Use the provided GitHub URL
   const GITHUB_URL = "https://github.com/kiaksarg";
   // Assumed CV path based on previous examples (update if different)
-  const CV_URL = "/files/arashg_cv.pdf";
+  const CV_URL = "/arashg_cv.pdf";
   // Define icon size
   const ICON_SIZE = 19; // Smaller icon size (default is 24)
 
