@@ -24,7 +24,7 @@ As part of my Master's thesis in Human-Computer Interaction (HCI) at Umeå Unive
 
 {/* In seated VR, physical rotation is limited, making full 360° exploration difficult. Amplifying head movements increases the virtual rotation relative to physical movement, enabling users to explore virtual environments with less physical effort. */}
 <div className="font-semibold uppercase tracking-wide mb-0 mt-8">Abstract</div>
-<div className=" p-2   rounded-md italic text-gray-700 dark:text-gray-300 leading-relaxed">
+<div className="p-2 rounded-md italic text-gray-700 dark:text-gray-300 leading-relaxed">
 In seated virtual reality (<em>VR</em>), where large physical turns are limited, 
 altering the mapping between physical and virtual movements can amplify head rotation, 
 enabling efficient view control with reduced physical effort.
@@ -32,19 +32,20 @@ This thesis introduces two amplified head rotation (<em>AHR</em>) techniques for
 the user-empowered <strong>Interactive</strong>, which affords user-timed switching 
 between high and low gain, and <strong>Adaptive</strong>, which adjusts gain automatically 
 based on head-motion kinematics.
-We evaluated both techniques in a mixed-methods study (n=31), compared with a 
-<strong>Static</strong> constant-gain baseline (g=2.5) across a <em>head-pointing task</em> 
-and a <em>180° rotation task</em>.
+We evaluated both techniques in a mixed-methods study (<em>n = 31</em>), compared with a 
+<strong>Constant</strong> constant-gain baseline (<em>g = 2.5</em>) across a 
+<em>head-pointing task</em> and a <em>180° rotation task</em>.
 Both <strong>Interactive</strong> and <strong>Adaptive</strong> improved head-pointing performance 
-relative to <strong>Static</strong>, while increasing physical head movement; 
+relative to <strong>Constant</strong>, while increasing physical head movement; 
 <em>cybersickness</em> remained low and <em>virtual–physical heading offsets</em> were generally modest.
 Qualitatively, participants valued <strong>Interactive</strong> for the agency and control it afforded. 
-Notably, this control enabled an emergent behavior in which users deliberately reoriented the virtual view, 
-a form of user-initiated redirected viewing we term <strong>ViewShift</strong>.
-<strong>Adaptive</strong> reduced cognitive load but could occasionally mis-time against user intent.
+Notably, this control enabled an emergent behavior in which users intentionally reoriented the virtual view 
+via asymmetric rotational gains — a user-initiated redirection strategy we term <strong>ViewShift</strong>.
+<strong>Adaptive</strong> reduced cognitive load but could occasionally misalign with user intent.
 Together, the findings suggest potential for giving users control over <em>rotational gains</em> 
 and highlight visible, user-centered <em>AHR</em> as an interaction technique for seated VR.
 </div>
+
 ## Implemented Prototype in Unity 3D
 
 
