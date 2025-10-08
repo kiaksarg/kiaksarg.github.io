@@ -24,8 +24,9 @@ links:
 </Head>
 
 
-As part of my Master's thesis in Human-Computer Interaction (HCI) at Umeå University, supervised by Prof. Anders Lundström, I explored novel head rotation amplification techniques in Virtual Reality (VR) specifically designed to overcome the challenges posed by physically restricted turning angles in seated VR environments. The project focused on exploring novel head rotation techniques enhancing user comfort, efficiency, and overall interaction experience.
-
+As part of my Master's thesis in Human-Computer Interaction (HCI) at Umeå University, supervised by Prof. Anders Lundström,
+I explored novel head rotation amplification techniques in Virtual Reality (VR) specifically designed
+to overcome the challenges posed by physically restricted turning angles in seated VR environments.
 {/* In seated VR, physical rotation is limited, making full 360° exploration difficult. Amplifying head movements increases the virtual rotation relative to physical movement, enabling users to explore virtual environments with less physical effort. */}
 <div className="font-semibold uppercase tracking-wide mb-0 mt-8">Abstract</div>
 <div className="p-2 rounded-md italic text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -50,10 +51,26 @@ Together, the findings suggest potential for giving users control over <em>rotat
 and highlight visible, user-centered <em>AHR</em> as an interaction technique for seated VR.
 </div>
 
+<div className="mt-4 flex flex-wrap gap-3">
+  <a
+    href="/viewshift.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition"
+  >
+    📄 Read Full Thesis (PDF)
+  </a>
+  <a
+    href="https://umu.diva-portal.org/smash/record.jsf?pid=diva2:2004521"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+  >
+    🔗 View on DiVA Portal
+  </a>
+</div>
+
 ## Implemented Prototype in Unity 3D
-
-
-
 
   <div className="relative pt-[56.25%]">
     <iframe
@@ -66,56 +83,62 @@ and highlight visible, user-centered <em>AHR</em> as an interaction technique fo
   </div>
 
 
-# Techniques Developed
+# Techniques
 
 ## Static Gain (Baseline)
 
 **Static amplification:** Physical head rotation multiplied by a fixed factor. For example, a 30° turn becomes 60° in VR (gain = 2).
 
+## Interactive (User-Empowered) Gain
 
-## Interactive (User‑Empowered) Gain
-
-**Interactive amplification:** Users manually toggle between high and 1:1 normal mapping using VR controllers during ballistic (rapid rotation) and corrective phases for higher accuracy.
+**Interactive amplification:** Gives users direct control over <em>rotational gains</em>, allowing them to manually toggle between high and low gains using VR controllers during ballistic (rapid rotation) and corrective phases for higher accuracy.
 
 ## Adaptive Gain
 
-**Dynamic adaptive amplification:**  Automatic gain adjustment based on head rotation velocity and acceleration to smoothly transition between high gain during ballistic movements and normal gain during precise alignment.
+**Adaptive amplification:** Automatically adjusts the rotational gain based on head rotation velocity and acceleration, increasing during rapid (ballistic) movements and returning toward normal gain during slower, corrective movements to support precise alignment.
 
+## ViewShift: Emergent Reorientation Strategy
+
+During the study, several participants discovered they could intentionally reorient the virtual view without torso rotation by alternating between high- and low-gain states in the <strong>Interactive</strong> technique.  
+By applying asymmetric gain sequences—either <em>fast-out/slow-back</em> or <em>slow-out/fast-back</em>—participants could intentionally create and exploit a virtual–physical heading offset in a desired direction to reorient the view. 
 
 # Study Design
 
-We conducted a mixed-methods, within-subjects evaluation comparing three rotational gain techniques for seated VR: **Constant** (fixed gain 2.5×), **Interactive** (user-timed switching), and **Adaptive** (automatic adjustment based on head-motion kinematics).   
+We conducted a mixed-methods, within-subjects evaluation comparing three rotational gain techniques for seated VR: **Static** (constant gain 2.5×), **Interactive** (user-timed switching), and **Adaptive** (automatic adjustment based on head rotation velocity/acceleration).   
 31 participants performed two tasks (head-pointing and 180° rotation) under all techniques in randomized order.  
 
 ## Metrics Collected
+### Objective Measures
 <ul className="list-disc list-inside space-y-2 my-4">
   <li className="mb-1"><strong>Task Completion Time</strong>: Time required to complete tasks.</li>
   <li className="mb-1"><strong>Error Rate</strong>: The number of times targets were missed, and the angular deviation from the intended target.</li>
-  <li className="mb-1"><strong>Accumulated Offset</strong>: The overall angular difference between the task's starting and ending positions within the virtual environment.</li>
-  <li className="mb-1"><strong>Physical vs. Virtual Accumulated head Movement</strong>: Accumulated angular head movements were measured in both the physical and virtual environments.</li>
-  <li className="mb-1"><strong>NASA-TLX</strong>: User workload assessment.</li>
-  <li className="mb-1"><strong>Cybersickness in Virtual Reality Questionnaire (CSQ-VR)</strong>: Used to assess the level of motion sickness experienced in virtual reality across different techniques.</li>
+  <li className="mb-1"><strong>Virtual–Physical Heading Offset</strong>:
+    The absolute angular difference (in degrees) between a participant’s physical yaw heading at baseline 
+    (recorded when selecting the front home target at trial start) and their heading when re-selecting 
+    that same target at mid- or end-task checkpoints. This measure captures any lasting 
+    virtual–physical misalignment accumulated due to asymmetric rotational gains.</li>
+  <li className="mb-1"><strong>Physical Accumulated Head Movement</strong>: 
+  Total physical head rotation accumulated during each task.</li>
 </ul>
 
-### Usability Questions Regarding
+### Subjective Measures
 <ul className="list-disc list-inside space-y-2 my-4">
-  <li className="mb-1"><strong>Comfort and Usability</strong>: User comfort levels and intuitive interaction.</li>
-  <li className="mb-1"><strong>Control and Precision</strong>: User comfort levels and the ease of interaction during tasks.</li>
-  <li className="mb-1"><strong>Naturalness and Applicability</strong>: How naturally the techniques felt and how applicable users found them for VR use.</li>
+  <li className="mb-1"><strong>NASA-TLX</strong>: Perceived workload across mental, physical, and temporal dimensions.</li>
+  <li className="mb-1"><strong>CSQ-VR</strong>: Self-reported cybersickness symptoms before and after each block.</li>
+  <li className="mb-1"><strong>Self-designed Usability Questions</strong>: 
+    How participants perceived each technique in terms of Control, Comfort, Ease of Use, Precision, Applicability, and Naturalness.</li>
 </ul>
 
-## Qualitative User Feedback
+
+## Qualitative Accounts
 <div>User feedback was gathered through semi-structured interviews to explore the following areas:</div>
 <ul className="list-disc list-inside space-y-2 my-4">
   <li className="mb-1">How users experienced amplified head rotation compared to normal 1:1 mapping.</li>
+  <li className="mb-1">How participants experienced each technique in terms of control, sense of agency, precision, naturalness, and acceptance.</li>
   <li className="mb-1">How head rotation amplification affected users' sense of direction and spatial orientation.</li>
+  <li className="mb-1">How users perceived, managed, and recovered from virtual–physical heading offsets.</li>
   <li className="mb-1">Preferences between different amplification techniques (interactive vs. adaptive).</li>
-  <li className="mb-1">The impact of head rotation amplification on users' sense of immersion in the virtual environment.</li>
 </ul>
-
-<div>The interviews included questions about users' overall experience with each technique, perceived control and speed, ease of targeting, feelings of discomfort or motion sickness, and preferences for interactive versus adaptive amplification. Participants were also asked about their perception of space and immersion while using amplified head rotation.</div>
-
-<div>The qualitative data was analyzed using thematic analysis, which allowed me to identify key patterns and insights regarding user experiences and preferences related to head rotation amplification in VR.</div>
 
 ## Tasks
 
@@ -147,19 +170,15 @@ We conducted a mixed-methods, within-subjects evaluation comparing three rotatio
   </figcaption>
 </figure>
 
-# Resources & Further Reading
+{/* # Resources & Further Reading */}
 
-### Links
+## Links
+
+- <FileText className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" />**Full Thesis (PDF)**: [/viewshift.pdf](/viewshift.pdf)
+- <Link2 className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" />**DiVA Portal Record**: [umu.diva-portal.org/smash/record.jsf?pid=diva2:2004521](https://umu.diva-portal.org/smash/record.jsf?pid=diva2:2004521)
 - <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **GitHub Repository**: [vr-head-rotation-amplification](https://github.com/kiaksarg/vr-head-rotation-amplification)
 - <Link2 className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **React Prototype**: [rotationgains.netlify.app](https://rotationgains.netlify.app)
 
-
-## Related Papers
-<ul className="list-disc list-inside space-y-2 my-4">
-  <li className="mb-1"><strong>Wang, C. et al. (2023)</strong> ‘On Rotation Gains Within and Beyond Perceptual Limitations for Seated VR’, IEEE Transactions on Visualization and Computer Graphics, 29(7).<br/>Contributions: detection thresholds of rotation gains, and applicability.</li>
-  <li className="mb-1"><strong>Langbehn, E. et al. (2019)</strong> ‘Turn Your Head Half Round: VR Rotation Techniques for Situations With Physically Limited Turning Angle’, in Proceedings of Mensch und Computer 2019. Association for Computing Machinery (MuC ’19), pp. 235–243.<br/>Contributions: Dynamic gain technique.</li>
-  <li className="mb-1"><strong>Wang, H. et al. (2024)</strong> ‘HeadShift: Head Pointing with Dynamic Control-Display Gain’, ACM Trans. Comput.-Hum. Interact. [Preprint].</li>
-</ul>
 
 
 
