@@ -6,6 +6,8 @@ import React from "react";
 import Link from "next/link";
 import { Github, Globe, Youtube, Link2 } from "lucide-react";
 import { ZoomImage } from "./ZoomImage";
+import Head from 'next/head'
+
 
 // Custom anchor element for MDX links without underline or icon
 const A: MDXComponents['a'] = ({ href, children, ...rest }) => {
@@ -66,6 +68,7 @@ export const mdxComponents: MDXComponents = {
   Globe,
   Youtube,
   Link2,
+  Head
 };
 
 export default function MDXComponents({ children }: { children: React.ReactNode }) {
