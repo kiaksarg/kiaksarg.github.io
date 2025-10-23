@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { ThemeProvider } from "next-themes";
-import ThemeToggle from "../theme/theme-toggle"; 
+import ThemeToggle from "../theme/theme-toggle";
 import { FaGithub } from "react-icons/fa"; // Import GitHub icon from Font Awesome set
 import { TbFileCv } from "react-icons/tb"; // Import CV icon from Tabler Icons set
 import MDXWrapper from "../components/MDXComponents";
@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"
-      enableSystem={false}  
+      enableSystem
       disableTransitionOnChange
     >
       <Head>
