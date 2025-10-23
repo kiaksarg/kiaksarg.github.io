@@ -6,6 +6,7 @@ import animate from "tailwindcss-animate";
 const config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./content/**/*.{mdx,md}"],
   plugins: [typography, animate],
+  darkMode: "class",
 };
 
 export default config;

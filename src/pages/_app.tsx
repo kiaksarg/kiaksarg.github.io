@@ -4,10 +4,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { ThemeProvider } from "next-themes";
-import ThemeToggle from "../theme/theme-toggle"; // Assuming this path is correct
+import ThemeToggle from "../theme/theme-toggle"; 
 import { FaGithub } from "react-icons/fa"; // Import GitHub icon from Font Awesome set
 import { TbFileCv } from "react-icons/tb"; // Import CV icon from Tabler Icons set
-import MDXWrapper from "../components/MDXComponents"; // Assuming this path is correct
+import MDXWrapper from "../components/MDXComponents";
 
 import "react-medium-image-zoom/dist/styles.css";
 import "../styles/globals.css";
@@ -31,8 +31,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}  
       disableTransitionOnChange
     >
       <Head>
