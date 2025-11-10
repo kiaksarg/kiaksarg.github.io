@@ -21,11 +21,10 @@
 } */
 
 /* body { */
-  /* background: var(--background); */
-  /* color: var(--foreground); */
-  /* font-family: Helvetica, sans-serif, Arial; */
+/* background: var(--background); */
+/* color: var(--foreground); */
+/* font-family: Helvetica, sans-serif, Arial; */
 /* } */
-
 
 .nav-limit-width-below-340 {
   max-width: 150px; /* Or your desired max-width */
@@ -34,5 +33,42 @@
 @media (min-width: 340px) {
   .nav-limit-width-below-340 {
     max-width: none; /* Remove the max-width at 340px and above */
+  }
+}
+
+/* Tailwind: put inside @layer components{} if you prefer */
+.mdx-tables table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.mdx-tables thead {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+.mdx-tables th,
+.mdx-tables td {
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  border-bottom: 1px solid rgb(228 228 231); /* zinc-200 */
+  vertical-align: top;
+}
+@media (prefers-color-scheme: dark) {
+  .mdx-tables th,
+  .mdx-tables td {
+    border-bottom-color: rgb(39 39 42); /* zinc-800 */
+  }
+}
+.mdx-tables tr:nth-child(even) td {
+  background: color-mix(in srgb, currentColor 4%, transparent);
+}
+
+/* Optional: framed + scroll on small screens */
+.mdx-tables table {
+  display: block;
+  overflow-x: auto;
+  border: 1px solid rgb(228 228 231);
+  border-radius: 0.75rem; /* rounded-xl */
+}
+@media (prefers-color-scheme: dark) {
+  .mdx-tables table {
+    border-color: rgb(39 39 42);
   }
 }

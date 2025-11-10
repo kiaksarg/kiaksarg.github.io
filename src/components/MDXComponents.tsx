@@ -8,10 +8,9 @@ import { Github, Globe, Youtube, Link2, FileText } from "lucide-react";
 import { ZoomImage } from "./ZoomImage";
 import Head from "next/head";
 
-// Custom anchor element for MDX links without underline or icon
+// Anchor
 const A: MDXComponents["a"] = ({ href, children, ...rest }) => {
   const isInternal = href?.startsWith("/") || href?.startsWith("#");
-  // Tailwind classes for clean link: no underline, subtle color change
   const baseClasses = [
     "inline-block",
     "font-medium",
@@ -19,14 +18,11 @@ const A: MDXComponents["a"] = ({ href, children, ...rest }) => {
     "dark:text-indigo-400",
     "hover:text-indigo-800",
     "dark:hover:text-indigo-200",
-    "transition-colors",
-    "duration-200",
+    "transition-colors duration-200",
     "focus:outline-none",
-    "focus-visible:ring-2",
-    "focus-visible:ring-indigo-500",
+    "focus-visible:ring-2 focus-visible:ring-indigo-500",
     "focus-visible:ring-offset-2",
-    "focus-visible:ring-offset-white",
-    "dark:focus-visible:ring-offset-black",
+    "focus-visible:ring-offset-white dark:focus-visible:ring-offset-black",
   ].join(" ");
 
   if (isInternal && href) {
@@ -36,7 +32,6 @@ const A: MDXComponents["a"] = ({ href, children, ...rest }) => {
       </Link>
     );
   }
-
   return (
     <a
       href={href}
@@ -56,8 +51,7 @@ export const mdxComponents: MDXComponents = {
   h2: (props) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} />,
 
   /* --- Text --- */
-  // p: (props) => <p className="mb-4 leading-relaxed" {...props} />,
-  a: A, // styled link component without underline or icon
+  a: A,
 
   /* --- Images & Zoom --- */
   ZoomImage,
@@ -69,6 +63,37 @@ export const mdxComponents: MDXComponents = {
   Link2,
   FileText,
   Head,
+
+  /* --- Tables (padding + borders + zebra + responsive) --- */
+  table: ({ children, ...props }) => (
+    <div className="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+      <table {...props} className="w-full border-collapse text-sm">
+        {children}
+      </table>
+    </div>
+  ),
+  thead: (props) => (
+    <thead {...props} className="bg-zinc-50 dark:bg-zinc-900/40" />
+  ),
+  tbody: (props) => <tbody {...props} />,
+  tr: (props) => (
+    <tr
+      {...props}
+      className="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20"
+    />
+  ),
+  th: (props) => (
+    <th
+      {...props}
+      className="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top"
+    />
+  ),
+  td: (props) => (
+    <td
+      {...props}
+      className="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"
+    />
+  ),
 };
 
 export default function MDXComponents({

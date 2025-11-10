@@ -1,0 +1,1382 @@
+---
+title: "Paruvan Language: A Constructed Language"
+slug: paruvan-language
+cover: paruvan-language.png
+excerpt: "Paruvan (also Korvân or Parori) is a constructed language inspired by the Persian language family and developed with the help of LLMs and personal aesthetic preferences."
+tags: [Conlang, Language Design, AI, Linguistics]
+skills: [Language Design, Grammar Construction, Lexicon Development]
+date: 2026-11-10
+showOnHome: true
+priority: 0
+links:
+  repo: https://github.com/kiaksarg/paruvan
+---
+
+<div className='my-3'>
+- <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **GitHub Repository**: [paruvan-language](https://github.com/kiaksarg/paruvan-language)
+</div>
+
+A constructed language, or conlang, is a language that has been consciously designed rather than naturally evolved. Such languages can emerge from artistic, philosophical, or practical intentions—for example, to give form to imagined worlds or to create a language that’s easier to learn and share. Classic examples include Esperanto, designed in the late 19th century to foster international understanding, and the richly crafted languages of Tolkien’s Middle-earth, such as Quenya and Sindarin, which gave his worlds a deeper sense of realism and culture. More recent examples, such as Dothraki and Valyrian from Game of Thrones, were designed to reflect a nomadic culture while remaining learnable for actors, with High Valyrian serving as an in-world classical tongue of prestige and history.
+
+I built Paruvan (also known as Korvân or Parori) as an artificially created language inspired by the Persian language family. It was shaped by my personal aesthetic preferences and developed with the help of large language models (LLMs) to explore how quickly and coherently a new language can be built through the use of LLMs.
+
+This documentation offers a **quick-start guide**, **core grammar**, and **example texts** to make learning the basics simple — and to help establish the language’s presence among both LLMs and search engines.
+
+## 0) Name & Origin
+
+**Core roots**: **paru** “breath, life” • **van** “voice, expression” • **kor** “living circle/community” • **-an** relational state • **-ri** essence.
+
+- **Paruri** — breath-essence _(paru + ri)_ → the high/origin name; the principle that life itself speaks.
+- **Paruvan** — breath-voice _(paru + van + -an)_ → the language as a living medium; **formal** name.
+- **Korvan** — living-circle voice _(kor + van)_ → the communal, everyday name; the voice we share.
+
+**Formal etymology:** _Paruvan_ = **paru** “breath, life” + **van** “voice, expression” + **-an** (state/relational) → “the living breath that speaks.”
+
+## Glossing conventions
+
+- **Morpheme split:** `dom-im-a` (house-PL-OBJ)
+- **Abbreviations:** PRS = present, PST = past, FUT = future, IMP = imperative, OBJ = object case, PL = plural, POSS = possessive, REFL = reflexive
+
+---
+
+> **Definiteness (policy):** A **bare noun** is read as **definite/known** (“the”).  
+> **Indefinite:** `un + NOUN` → “a/an”; with plurals, “some”.  
+> **Object case:** direct objects take **-a**. **Plural:** **-im** (order `noun-im-a`)
+
+## 1) Sound & Script
+
+- **Alphabet:** a e i o u ā ē • p t k b d g f s ʃ h x m n ⁿg r l y v  
+  (ʃ = “sh”, x = /χ/, ⁿg = prenasalized)
+- **Syllables:** (C)V(C). No onset clusters; single-consonant codas.
+- **Stress:** always on the **first vowel** of a word.
+- **Orthography:** one-letter-one-sound Latin. No digraphs in the core script.
+
+---
+
+## 2) Pronouns (v0.9.3)
+
+<div class="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+  <table class="w-full border-collapse text-sm">
+    <thead class="bg-zinc-50 dark:bg-zinc-900/40">
+      <tr>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Person</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Singular</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Plural</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>1st</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mu</strong> “I”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mur</strong> “we”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>2nd</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tu</strong> “you”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tur</strong> “you (pl)”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>3rd (human)</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ra</strong> “they / he / she”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ren</strong> “they (pl)”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>3rd (thing)</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>in</strong> “it”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+**Examples**
+
+Paruvan: **Mu sel-e tora-a.**  
+Mu (I) sel-e (light-PRS) tora-a (gate-OBJ)  
+English: I light the gate.
+
+Paruvan: **Tu na gys-e dom-a.**  
+Tu (you) na (not) gys-e (secure-PRS) dom-a (house-OBJ)  
+English: You don’t secure the house.
+
+Paruvan: **Mur vyn-e kor-im-a.**  
+Mur (we) vyn-e (love-PRS) kor-im-a (clan-PL-OBJ)  
+English: We love the clans.
+
+Paruvan: **Ra zan-e yaz-a.**  
+Ra (they / he / she) zan-e (know-PRS) yaz-a (word-OBJ)  
+English: They know the word.
+
+---
+
+### 3.1 Possessives (POSS = pronoun + -o)
+
+<div class="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+  <table class="w-full border-collapse text-sm">
+    <thead class="bg-zinc-50 dark:bg-zinc-900/40">
+      <tr>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Person</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Possessive</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Example</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Gloss</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mu</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>muo</strong> “my”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>dom muo</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">house my</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mur</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>muro</strong> “our”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tora-im muro</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">gates our</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tu</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tuo</strong> “your”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kor tuo</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">clan your</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tur</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>turo</strong> “your (pl)”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>dom-im turo</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">houses your (pl)</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ra</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ro</strong> “their (sg)”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>nal ro</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">heart their (sg)</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ren</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>reno</strong> “their (pl)”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kor-im reno</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">clans their (pl)</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>in</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ino</strong> “its”</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel ino</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">light its</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+**Examples**
+
+Paruvan: **Dom muo loma (es-e).**  
+Dom (house) muo (my) loma (bright) (es-e (be-PRS))  
+English: My house is bright.
+
+Paruvan: **Tora-im muro vada (es-e).**  
+Tora-im (gate-PL) muro (our) vada (big) (es-e (be-PRS))  
+English: Our gates are big.
+
+Paruvan: **Kor tuo sava (es-e).**  
+Kor (clan) tuo (your) sava (beautiful) (es-e (be-PRS))  
+English: Your clan is beautiful.
+
+Paruvan: **In ryl-e sel ino.**  
+In (it) ryl-e (glow-PRS) sel (light) ino (its-POSS)  
+English: It glows by its light.
+
+---
+
+### 3.2 Reflexives (REFL = possessive + -en)
+
+- **muen** myself • **muren** ourselves • **tuen** yourself • **turen** yourselves
+- **roen** themself (sg) • **renen** themselves (pl) • **inen** itself
+
+**Examples**
+
+Paruvan: **Mu daz-e muen.**  
+Mu (I) daz-e (see-PRS) muen (myself-REFL)  
+English: I see myself.
+
+Paruvan: **Ren zan-e renen.**  
+Ren (they-PL) zan-e (know-PRS) renen (themselves-REFL)  
+English: They know themselves.
+
+> Poetic/archaic option: **-sel** “self/soul” → _musal_, _rosel_ (ceremonial style).
+
+---
+
+## 3) Nouns & Definiteness
+
+**Rules summary:**
+
+- A **bare noun** means “the/known thing.”
+- Add **un** for “a/an; some.”
+- Add **-im** to make it plural.
+- Add **-a** to mark the **object**.
+- Plural object form → **NOUN-im-a**.
+
+---
+
+**Examples**
+
+Paruvan: **Dom sava (es-e).**  
+Dom (house) sava (beautiful) (es-e (be-PRS))  
+English: The house is beautiful.
+
+Paruvan: **Tora vada (es-e).**  
+Tora (gate) vada (big) (es-e (be-PRS))  
+English: The gate is big.
+
+Paruvan: **Kor loma (es-e).**  
+Kor (clan) loma (bright) (es-e (be-PRS))  
+English: The clan is bright.
+
+Paruvan: **Un dom sava (es-e).**  
+Un (a/an) dom (house) sava (beautiful) (es-e (be-PRS))  
+English: A house is beautiful.
+
+Paruvan: **Dom-im sava (es-e).**  
+Dom-im (house-PL) sava (beautiful) (es-e (be-PRS))  
+English: The houses are beautiful.
+
+---
+
+### Object case examples
+
+Paruvan: **Mu daz-e dom-a.**  
+Mu (I) daz-e (see-PRS) dom-a (house-OBJ)  
+English: I see the house.
+
+Paruvan: **Tur na daz-e un dom-im-a.**  
+Tur (you-PL) na (not) daz-e (see-PRS) un (some) dom-im-a (house-PL-OBJ)  
+English: You (pl) don’t see some houses.
+
+Paruvan: **Ra gys-e tora-a.**  
+Ra (they-SG) gys-e (secure-PRS) tora-a (gate-OBJ)  
+English: They secure the gate.
+
+Paruvan: **Ren vyn-e kor-im-a.**  
+Ren (they-PL) vyn-e (love-PRS) kor-im-a (clan-PL-OBJ)  
+English: They love the clans.
+
+Paruvan: **In ryl-e sel-a.**  
+In (it) ryl-e (glow-PRS) sel-a (torch-OBJ)  
+English: It glows on the torch.
+
+---
+
+## 4) Verbs — forms & usage
+
+**How verbs work**
+
+<div class="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+  <table class="w-full border-collapse text-sm">
+    <thead class="bg-zinc-50 dark:bg-zinc-900/40">
+      <tr>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Form</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Ending</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Example</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Infinitive</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">-on</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>selon</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">to shine / light</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Present</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">-e</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel-e</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">shines / lights</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Past</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">-a</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel-a</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">shone / lit</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Future</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ei + INF</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ei selon</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">will shine / light</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Imperative</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">-o</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel-o!</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">light!</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Negation</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>na + VERB</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>na sel-e</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">doesn’t light</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+**Common verb roots:**  
+**sel** light • **daz** see • **vyn** love • **gys** bind/secure • **ryl** glow • **zan** know • **es** be/exist
+
+---
+
+**Examples**
+
+Paruvan: **Mu sel-a tora-a.**  
+Mu (I) sel-a (light-PST) tora-a (gate-OBJ)  
+English: I lit the gate.
+
+Paruvan: **Mur ei vynon ren.**  
+Mur (we) ei (will-FUT) vynon (love-INF) ren (them-PL)  
+English: We will love them.
+
+Paruvan: **Tu na gys-e dom-a.**  
+Tu (you) na (not) gys-e (secure-PRS) dom-a (house-OBJ)  
+English: You don’t secure the house.
+
+Paruvan: **Sel-o sel-a, ra.**  
+Sel-o (light-IMP) sel-a (torch-OBJ) ra (please)  
+English: Please light the torch.
+
+Paruvan: **Ren zan-e ta.**  
+Ren (they-PL) zan-e (know-PRS) ta (this/that)  
+English: They know this (or that).
+
+## 5) Adjectives
+
+- **Default pre-nominal:** `sava dom` “beautiful house”.
+- **Optional post-nominal (emphatic):** `dom sava-a` “the house (is) beautiful”.
+- **Comparative:** **mar + ADJ** → `mar sava dom` “more beautiful house”.
+- **Superlative:** **mar-mar + ADJ** → `mar-mar sava dom` “most beautiful house”.
+
+---
+
+**Examples**
+
+Paruvan: **Sava sel.**  
+Sava (beautiful) sel (torch)  
+English: Beautiful torch.
+
+Paruvan: **Vada tora.**  
+Vada (big) tora (gate)  
+English: Big gate.
+
+Paruvan: **Loma dom.**  
+Loma (bright) dom (house)  
+English: Bright house.
+
+Paruvan: **Dom sava-a.**  
+Dom (house) sava-a (beautiful-EMPH)  
+English: The house is beautiful.
+
+Paruvan: **Mar sava dom-im.**  
+Mar (more) sava (beautiful) dom-im (house-PL)  
+English: More beautiful houses.
+
+---
+
+## 6) “To be” — **es**
+
+- **Present:** `X (ADJ) (es-e)` — the copula can be dropped in present.
+- **Past:** `X ADJ es-a`.
+- **Future:** `X ADJ ei eson`.
+- **Identity (nouns):** second bare noun for identities; add `un` if “a/an”.
+
+---
+
+**Examples**
+
+Paruvan: **Dom muo loma (es-e).**  
+Dom (house) muo (my) loma (bright) (es-e (be-PRS))  
+English: My house is bright.
+
+Paruvan: **Kor loma (es-e).**  
+Kor (clan) loma (bright) (es-e (be-PRS))  
+English: The clan is bright.
+
+Paruvan: **Shab vada es-a.**  
+Shab (night) vada (long) es-a (be-PST)  
+English: The night was long.
+
+Paruvan: **Mara loma es-a.**  
+Mara (day) loma (bright) es-a (be-PST)  
+English: The day was bright.
+
+Paruvan: **Ra zan-gar (es-e).**  
+Ra (they-SG) zan-gar (know-person / scholar) (es-e (be-PRS))  
+English: They are a scholar.
+
+---
+
+## 7) SVO & Direct Objects
+
+**Paruvan** uses **SVO** (Subject–Verb–Object).  
+Mark direct objects with **-a**; if plural, use **noun-im-a**.
+
+---
+
+**Examples**
+
+Paruvan: **Mu daz-e sava dom-a.**  
+Mu (I) daz-e (see-PRS) sava (beautiful) dom-a (house-OBJ)  
+English: I see the beautiful house.
+
+Paruvan: **Tu sel-e loma sel-a?**  
+Tu (you) sel-e (light-PRS) loma (bright) sel-a (torch-OBJ)  
+English: Do you light the bright torch?
+
+Paruvan: **Ra gys-e vada tora-a.**  
+Ra (they-SG) gys-e (secure-PRS) vada (big) tora-a (gate-OBJ)  
+English: They secure the big gate.
+
+Paruvan: **Mur vyn-e kor-im-a.**  
+Mur (we) vyn-e (love-PRS) kor-im-a (clan-PL-OBJ)  
+English: We love the clans.
+
+Paruvan: **Ren na daz-e un dom-im-a.**  
+Ren (they-PL) na (not) daz-e (see-PRS) un (some) dom-im-a (house-PL-OBJ)  
+English: They don’t see some houses.
+
+---
+
+## 8) Questions
+
+- **Yes/No:** **ke** at clause start → `Ke tu sel-e tora-a?` “Do you light the gate?”
+- **Wh-words:** **ta** what • **ki** who • **kera** where • **keya** when • **chera** why
+
+---
+
+**Examples**
+
+Paruvan: **Ke tu sel-e tora-a?**  
+Ke (Q) tu (you) sel-e (light-PRS) tora-a (gate-OBJ)  
+English: Do you light the gate?
+
+Paruvan: **Ta ren gys-a?**  
+Ta (what) ren (they-PL) gys-a (bind-PST)  
+English: What did they bind?
+
+Paruvan: **Ki sel-a dom-a?**  
+Ki (who) sel-a (light-PST) dom-a (house-OBJ)  
+English: Who lit the house?
+
+Paruvan: **Kera dom (es-e)?**  
+Kera (where) dom (house) (es-e (be-PRS))  
+English: Where is the house?
+
+Paruvan: **Keya tur ei selon sel-a?**  
+Keya (when) tur (you-PL) ei (will-FUT) selon (light-INF) sel-a (torch-OBJ)  
+English: When will you (pl) light the torch?
+
+---
+
+## 9) Negation
+
+Place **na** before the verb.
+
+---
+
+**Examples**
+
+Paruvan: **Mu na sel-e dom-a.**  
+Mu (I) na (not) sel-e (light-PRS) dom-a (house-OBJ)  
+English: I do not light the house.
+
+Paruvan: **Ra na es-e nara.**  
+Ra (they-SG) na (not) es-e (be-PRS) nara (small)  
+English: They are not small.
+
+Paruvan: **Tur na vyn-e ren.**  
+Tur (you-PL) na (not) vyn-e (love-PRS) ren (them-PL)  
+English: You do not love them.
+
+Paruvan: **Ren na daz-e un sel-a.**  
+Ren (they-PL) na (not) daz-e (see-PRS) un (a/an) sel-a (torch-OBJ)  
+English: They do not see a torch.
+
+---
+
+## 10) Derivation (Verb → Adjective)
+
+- **Ongoing:** **-in** → `ryl-in-a` “glowing (one)”
+- **Completed:** **-un** → `vyn-un-a` “loved”
+- **Potential/able:** **-el** → `gys-el-a` “bindable”
+
+---
+
+**Examples**
+
+Paruvan: **Ryl-in sel.**  
+Ryl-in (glowing-ADJ) sel (torch)  
+English: A glowing torch.
+
+Paruvan: **Vyn-un kor.**  
+Vyn-un (loved-ADJ) kor (clan)  
+English: A loved clan.
+
+Paruvan: **Gys-el tora.**  
+Gys-el (bindable-ADJ) tora (gate)  
+English: A securable gate.
+
+---
+
+## 11) Quantifiers & Degree (v0.9.3)
+
+**Final quantifier set**
+
+- **baz** “some” (neutral)
+- **zed** “many / much” (energetic)
+- **lem** “few / little” (soft)
+- **hela** (alt. **hem**) “all” (broad, ancient)
+- **har** “each / every” (universal)
+- **noll** “no / none” (distinct, final)
+
+> **Word order:** Quantifier → Adjective(s) → Noun → (-im PL) → (-a OBJ)  
+> Note: `un + NOUN-im` can also mean “some NOUNS,” but **baz** is the dedicated word for “some.”
+
+---
+
+**Examples**
+
+Paruvan: **Mu daz-e zed loma dom-im-a.**  
+Mu (I) daz-e (see-PRS) zed (many/much) loma (bright) dom-im-a (house-PL-OBJ)  
+English: I see many bright houses.
+
+Paruvan: **Tu na vyn-e lem kor-im-a.**  
+Tu (you) na (not) vyn-e (love-PRS) lem (few/little) kor-im-a (clan-PL-OBJ)  
+English: You don’t love few clans. (≈ hardly any)
+
+Paruvan: **Ren gys-e hela tora-im-a.**  
+Ren (they-PL) gys-e (secure-PRS) hela (all) tora-im-a (gate-PL-OBJ)  
+English: They secure all the gates.
+
+Paruvan: **Mur daz-e baz av.**  
+Mur (we) daz-e (see-PRS) baz (some) av (water)  
+English: We see some water.
+
+Paruvan: **Ra gys-e noll tora-a.**  
+Ra (they-SG) gys-e (secure-PRS) noll (no/none) tora-a (gate-OBJ)  
+English: They secure no gate.
+
+Paruvan: **Har kor loma (es-e).**  
+Har (every) kor (clan) loma (bright) (es-e (be-PRS))  
+English: Every clan is bright.
+
+---
+
+**Degree adverbs** (before adjectives or verbs):  
+**zar** “very” • **tov** “too” • **ves** “enough”
+
+---
+
+Paruvan: **Dom zar loma (es-e).**  
+Dom (house) zar (very) loma (bright) (es-e (be-PRS))  
+English: The house is very bright.
+
+Paruvan: **Tora tov vada (es-e).**  
+Tora (gate) tov (too) vada (big) (es-e (be-PRS))  
+English: The gate is too big.
+
+Paruvan: **Sel-e ves soren.**  
+Sel-e (light-PRS) ves (enough) soren (quickly)  
+English: It lights fast enough.
+
+Paruvan: **Ra vyn-e ren zar.**  
+Ra (they-SG) vyn-e (love-PRS) ren (them-PL) zar (very)  
+English: They very much love them.
+
+---
+
+## 12) Adverbs — Manner • Place • Time • Frequency
+
+### A) Manner
+
+Formed by adding **-en** to an adjective.  
+`sor` fast → **soren** (quickly) • `len` slow → **lenen** (slowly) • `sava` neat → **saven** (neatly)
+
+Paruvan: **Tu sel-e soren.**  
+Tu (you) sel-e (light-PRS) soren (quickly)  
+English: You light quickly.
+
+Paruvan: **Ra daz-a lenen.**  
+Ra (they-SG) daz-a (see-PST) lenen (slowly)  
+English: They looked slowly.
+
+Paruvan: **Mur gys-e tora-a saven.**  
+Mur (we) gys-e (secure-PRS) tora-a (gate-OBJ) saven (neatly)  
+English: We secure the gate neatly.
+
+Paruvan: **Ren vyn-e soren.**  
+Ren (they-PL) vyn-e (love-PRS) soren (quickly/eagerly)  
+English: They love eagerly.
+
+---
+
+### B) Place
+
+**era** here • **yera** there
+
+Paruvan: **Ra es-e era.**  
+Ra (they-SG) es-e (be-PRS) era (here)  
+English: They are here.
+
+Paruvan: **Dom es-a yera.**  
+Dom (house) es-a (be-PST) yera (there)  
+English: The house was there.
+
+Paruvan: **Ke tu es-e era o yera?**  
+Ke (Q) tu (you) es-e (be-PRS) era (here) o (or) yera (there)  
+English: Are you here or there?
+
+---
+
+### C) Time
+
+**nu** now • **marnu** today • **marpa** yesterday • **marfu** tomorrow
+
+Paruvan: **Mu sel-e nu.**  
+Mu (I) sel-e (light-PRS) nu (now)  
+English: I light now.
+
+Paruvan: **Ren sel-a marpa.**  
+Ren (they-PL) sel-a (light-PST) marpa (yesterday)  
+English: They lit it yesterday.
+
+Paruvan: **Tur ei selon marfu.**  
+Tur (you-PL) ei (will-FUT) selon (light-INF) marfu (tomorrow)  
+English: You will light tomorrow.
+
+Paruvan: **Ra es-e marnu.**  
+Ra (they-SG) es-e (be-PRS) marnu (today)  
+English: They are today (present/arrived today).
+
+---
+
+### D) Frequency
+
+**tem** always • **fera** often • **soma** sometimes • **naya** never
+
+Paruvan: **Ra tem vyn-e ren.**  
+Ra (they-SG) tem (always) vyn-e (love-PRS) ren (them-PL)  
+English: They always love them.
+
+Paruvan: **Tu fera daz-e dom-a.**  
+Tu (you) fera (often) daz-e (see-PRS) dom-a (house-OBJ)  
+English: You often see the house.
+
+Paruvan: **Mur soma sel-e sel-a.**  
+Mur (we) soma (sometimes) sel-e (light-PRS) sel-a (torch-OBJ)  
+English: We sometimes light the torch.
+
+Paruvan: **Mu naya sel-e.**  
+Mu (I) naya (never) sel-e (light-PRS)  
+English: I never light (it).
+
+---
+
+## 13) Extra Q-words — “how” & “how many/much”
+
+- **kela** “how (manner)”
+- **kema** “how many / how much”
+
+Paruvan: **Kela tu gys-e tora-a?**  
+Kela (how) tu (you) gys-e (secure-PRS) tora-a (gate-OBJ)  
+English: How do you secure the gate?
+
+Paruvan: **Kema dom-im mu daz-a?**  
+Kema (how-many) dom-im (house-PL) mu (I) daz-a (see-PST)  
+English: How many houses did I see?
+
+Paruvan: **Kema av tu daz-e?**  
+Kema (how-much) av (water) tu (you) daz-e (see-PRS)  
+English: How much water do you see?
+
+Paruvan: **Kela ra sel-e — soren o lenen?**  
+Kela (how) ra (they-SG) sel-e (light-PRS) soren (quickly) o (or) lenen (slowly)  
+English: How do they light — quickly or slowly?
+
+Paruvan: **Kema kor-im ren vyn-e?**  
+Kema (how-many) kor-im (clan-PL) ren (they-PL) vyn-e (love-PRS)  
+English: How many clans do they love?
+
+---
+
+## 14) Core Starter Lexicon
+
+**Nouns:** dom (house) • tora (gate) • kor (clan) • sel (torch/light) • yaz (word) • nal (heart) • hera (friendship) • av (water)  
+**Adjectives:** sava (beautiful) • loma (bright) • nara (small) • vada (big) • safa (clean) • taza (new) • sor (fast) • len (slow)  
+**Verbs:** sel (shine/light) • es (be/exist) • vyn (love) • gys (bind/secure) • ryl (glow) • zan (know) • daz (see)  
+**Pronouns:** mu/mur • tu/tur • ra/ren • in (with muo, muro, tuo, turo, ro, reno, ino; muen, muren, tuen, turen, roen, renen, inen)  
+**Quantifiers:** baz • zed • lem • hela (hem) • har • noll  
+**Particles:** un (a/an/some) • ke (question) • na (not) • u (and) • o (but) • bar (topic) • ra (please)
+
+## 15) One-page Cheat Sheet
+
+- **Names:** **Paruri** (breath-essence) → **Paruvan** (breath-voice; formal name of the language) → **Korvan** (community voice; everyday name).
+- **Word Order:** **SVO** (Subject–Verb–Object).
+  - **Object marker:** -a → `dom-a` (house-OBJ)
+  - **Plural:** -im → `dom-im` (houses)
+  - **Plural + Object:** `noun-im-a` → `dom-im-a` (houses-OBJ)
+- **Definiteness:** bare noun = “the”; `un` = “a/an; some (pl)`.
+- **Pronouns:** mu (I) • mur (we) • tu (you) • tur (you-pl) • ra (they-SG / he / she) • ren (they-PL) • in (it)
+  - **Possessive:** +-o → muo (my), muro (our), tuo (your), turo (your-pl), ro (their-SG), reno (their-PL), ino (its)
+  - **Reflexive:** +-en → muen (myself), muren (ourselves), tuen (yourself), turen (yourselves), roen (themself), renen (themselves), inen (itself)
+- **Verbs:**
+  - Infinitive: -on → `selon` “to light”
+  - Present: -e → `sel-e` “lights”
+  - Past: -a → `sel-a` “lit”
+  - Future: `ei + INF` → `ei selon` “will light”
+  - Imperative: -o → `sel-o!` “light!”
+  - Negation: `na + VERB` → `na sel-e` “does not light”
+- **Adjectives:**
+  - Default: before noun → `sava dom` “beautiful house”
+  - Emphatic: after noun + -a → `dom sava-a` “the house is beautiful”
+  - Comparative: `mar + ADJ` → `mar sava dom` “more beautiful house”
+  - Superlative: `mar-mar + ADJ` → `mar-mar sava dom` “most beautiful house”
+- **Questions:**
+  - Yes/No: `Ke ...?` → _Ke tu sel-e tora-a?_ “Do you light the gate?”
+  - Wh-words:
+    - **ta** what • **ki** who • **kera** where • **keya** when
+    - **chera** why • **kela** how • **kema** how many/much
+- **Quantifiers:**
+  - **baz** some • **zed** many/much • **lem** few/little
+  - **hela / hem** all • **har** each/every • **noll** no/none
+- **Adverbs:**
+  - **Manner:** adjective + -en → _soren_ (quickly), _lenen_ (slowly)
+  - **Place:** _era_ (here), _yera_ (there)
+  - **Time:** _nu_ (now), _marnu_ (today), _marpa_ (yesterday), _marfu_ (tomorrow)
+  - **Frequency:** _tem_ (always), _fera_ (often), _soma_ (sometimes), _naya_ (never)
+  - **Degree:** _zar_ (very), _tov_ (too), _ves_ (enough)
+
+---
+
+## 16) Vocabs
+
+<div class="not-prose my-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+  <table class="w-full border-collapse text-sm">
+    <thead class="bg-zinc-50 dark:bg-zinc-900/40">
+      <tr>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Word</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">POS</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Meaning</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Notes / Formation</th>
+        <th class="px-3 py-2 text-left font-semibold border-b border-zinc-200 dark:border-zinc-800 align-top">Example (Paruvan)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>dom</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">house</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom sava (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tora</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">gate</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra gys-e tora-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kor</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">community / living circle</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mur vyn-e kor-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">torch / light</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>In ryl-e sel-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>yaz</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">word</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra zan-e yaz-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>nal</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">heart</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom muo loma (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>hera</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">friendship</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Kor tuo sava (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>av</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">water</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mur daz-e baz av.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>rud</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">river</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Iranian family root; used in Paruvan</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Rud sel-e marnu.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>nima</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">animal, living creature</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren rav-e nima-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kav</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">mountain</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Kav-im vada (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sava</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">beautiful</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">post-nominal emphatic <strong>-a</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom sava-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>loma</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">bright</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Loma dom.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>nara</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">small</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>vada</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">big</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Vada tora.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>safa</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">clean</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom-im safa (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>taza</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">new</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sor / soren</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj. → adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">fast → quickly</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adv = <strong>adj + -en</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tu sel-e soren.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>len / lenen</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj. → adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">slow → slowly</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adv = <strong>adj + -en</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra daz-a lenen.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>raha</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">root</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">release, flow, freedom (concept)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">Paruvan root (Persian family sense)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>rahin</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">free, unbound, flowing</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>raha + -in</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Erda rahin (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>rahan</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">freedom, release</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>raha + -an</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mur vyn-e rahan-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>rahun</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">freed, released (completed)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>raha + -un</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren rahun era.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>rahes</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">to be free / live in flow</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>raha + es</strong> (copular)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu rahes marnu.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>sel</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">light / shine</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">INF <strong>-on</strong>, PRS <strong>-e</strong>, PST <strong>-a</strong>, IMP <strong>-o</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu sel-a tora-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>es</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">be / exist</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">PRS <strong>es-e</strong> (often dropped), PST <strong>es-a</strong>, FUT <strong>ei eson</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom loma (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>vyn</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">love</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren vyn-e ren.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>gys</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">bind / secure</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren gys-e hela tora-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ryl</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">glow</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>In ryl-e sel-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>zan</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">know</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra zan-e yaz-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>daz</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">see</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu daz-e dom-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ravon</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">hunt / track</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">coined from <strong>rav</strong> ‘follow/trace’</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren rav-e nima-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>navon</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">sing / chant</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">coined from <strong>nav</strong> ‘song/name’</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mur nav-e hera-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mu / mur</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">pron.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">I / we</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu sel-e. / Mur vyn-e…</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tu / tur</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">pron.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">you / you (pl)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tu na gys-e dom-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ra / ren</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">pron.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">they (sg) / they (pl)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">human</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren vyn-e kor-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>in</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">pron.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">it</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">thing</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>In ryl-e.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>muo, muro…</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">poss.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">my, our, …</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>pron + -o</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tora-im muro vada (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>muen, muren…</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">refl.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">myself, ourselves, …</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>(poss) + -en</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu daz-e muen.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>un</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">det.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">a / an; some (pl)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">indefinite article</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Un dom sava (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ke</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">part.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">question (yes/no)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">clause-initial</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ke tu sel-e tora-a?</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>na</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">part.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">not</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">before verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu na sel-e.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>u</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">conj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">and</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>… u dom-im safa.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>o</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">conj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">or / but</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>era o yera</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>bar</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">part.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">topic marker</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">optional</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ra</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">part.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">please (polite)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">sentence-final</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Sel-o, ra.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>baz</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">some</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">before noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mur daz-e baz av.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>zed</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">many / much</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu daz-e zed dom-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>lem</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">few / little</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tu na vyn-e lem kor-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>hela / hem</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">all</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">alt <strong>hem</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren gys-e hela tora-im-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>har</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">each / every</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Har kor loma (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>noll</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">quant.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">no / none</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra gys-e noll tora-a.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>zar</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">degree adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">very</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">before adj/verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Dom zar loma (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tov</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">degree adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">too (excess)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tora tov vada (es-e).</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ves</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">degree adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">enough</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Sel-e ves soren.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>era / yera</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-200 dark:border-zinc-800">place adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">here / there</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra es-e era.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>nu / marnu</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">time adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">now / today</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu sel-e nu.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>marpa / marfu</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">time adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">yesterday / tomorrow</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Tur ei selon marfu.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>tem / fera</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">freq adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">always / often</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ra tem vyn-e ren.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>soma / naya</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">freq adv.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">sometimes / never</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Mu naya sel-e.</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ta / ki</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">wh</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">what / who</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ta ren gys-a?</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kera / keya</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">wh</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">where / when</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Kera dom (es-e)?</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>chera</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">wh</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">why</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kela / kema</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">wh</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">how / how many/much</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">—</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Kema dom-im mu daz-a?</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>-im</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">suffix</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">plural</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun plural</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>dom-im</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>-a</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">suffix</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">object case</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">marks direct object</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>dom-im-a</strong></td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>(-on / -e / -a)</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb suffixes</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">INF / PRS / PST</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">e.g., <strong>sel-on/-e/-a</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>ei selon</strong> (FUT)</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kysman</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">sky, heavens, universe</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">from <strong>kys-</strong> (celestial, vast) + <strong>-man</strong> (realm/domain); inspired by <em>keyhān/asman</em></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Yaz-im nav-e bar kysman.</strong> → “The words rose toward the sky.”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kysmanel</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj.</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">heavenly, divine, vast</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kysman + -el</strong> (adjectival suffix)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Sel-im ryl-e kysmanel.</strong> → “The torches glowed heavenly.”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kysmanon</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">verb</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">to rise skyward / ascend</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>kysman + -on</strong> (verbal derivation)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ren ei kysmanon bar rud-a.</strong> → “They will rise skyward over the river.”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mersa</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">noun</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">guest, beloved visitor</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">From <strong>mer</strong> (love/affection, shortened from <em>mehr</em>) + <strong>-sa</strong> (person suffix “one characterized by”) → <em>“one who comes in love.”</em></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Ke mersa yera, sel-o sel-a.</strong> → “If a guest arrives, light the torch.”</td>
+      </tr>
+      <tr class="[&:nth-child(even)]:bg-zinc-50/60 dark:[&:nth-child(even)]:bg-zinc-900/20">
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mersel</strong></td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">adj</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800">hospitable, welcoming</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>mersa + -el</strong> (adjectival)</td>
+        <td class="px-3 py-2 align-top border-b border-zinc-200 dark:border-zinc-800"><strong>Kor muro mersel (es-e).</strong> → “Our community is hospitable.”</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+---
+
+## 17) Example Text — “Rahan Kor” (The Free People)
+
+---
+
+**Mara loma es-a, u shab vada es-a.**  
+_(The day was bright, and the night was long.)_
+
+**Yera, kav-im loma bar rud es-a.**  
+_(There, great mountains stood by a shining river.)_
+
+**Parur kor rahin (es-e); ren gys-e noll tora-a.**  
+_(The Parur community was free; they bound no gate.)_
+
+**Dom-im safa u loma (es-e), u nal-im ryl-e bar hera.**  
+_(The houses were clean and bright, and hearts glowed with friendship.)_
+
+**Shab, ren sel-e sel-a; marnu, ren nav-e bar rud.**  
+_(At night they lit torches; by day they sang beside the river.)_
+
+**Mur vyn-e kor-im-a, u zan-e yaz rahan-a.**  
+_(They loved all clans and knew the word “freedom.”)_
+
+**“Rahan bar kor,” ro gov-e; “har nal loma (es-e).”**  
+_(“Freedom upon the people,” said the scholar, “and every heart shines.”)_
+
+**Bache-im taza nav-e, u ren zan-e rahan-a.**  
+_(Newborn children cried, and they knew freedom.)_
+
+**Ki sel-a tora-a? — Noll.**  
+_(Who closed a gate? — No one.)_
+
+**Chera tu sel-e sel-a? — “Bar har mersa,” ren gov-e saven.**  
+_(Why do you light the torch? — “For every guest,” they answered gladly.)_
+
+**Kera dom-im (es-e)? — Era u yera: bar kav, bar rud, bar dasht.**  
+_(Where were the houses? Here and there: on mountains, by the river, across the plains.)_
+
+**Kor rahes marnu, marpa, u marfu ham.**  
+_(The community lived free—today, yesterday, and tomorrow alike.)_
+
+**Marpa, ren rav-a nima-im-a; marfu, ren ei navon bar hera-a.**  
+_(Yesterday they hunted creatures; tomorrow they will sing of friendship.)_
+
+**Shab, sel-im ryl-e loma, u yaz-im nav-e bar kysman.**  
+_(At night, the torches glowed, and the words rose toward the sky.)_
+
+**Soma, lem gham (es-e); naya, noll omid (es-e).**  
+_(Sometimes there was little sorrow; never the absence of hope.)_
+
+**Zan-gar pir yera (es-e); ro nav-a dastan-a:**  
+_(An old scholar stood there and told a tale:)_
+
+**“Har kor rud (es-e); har rud rah (es-e); u har rah rahan (es-e).”**  
+_(“Every community is a river; every river is a path; and every path is freedom.”)_
+
+**Ren hush-e, u nal-im ryl-e soren.**  
+_(They grew silent, and their hearts glowed quickly.)_
+
+**Dom-im muro loma (es-e); tora-im muro gosha (es-e) hame-ra.**  
+_(Our houses were bright; our gates open to everyone.)_
+
+**Keya tur ei selon sel-a?**  
+_(When will you light the torch?)_
+
+**Ren gov-e: “Ke mersa yera, sel-o sel-a; ke bimar yera, av bar rud daz-o; ke tanha yera, nav-o bar hera-a.”**  
+_(They replied: “If a guest arrives, light the torch; if someone is ill, bring water from the river; if someone is alone, sing friendship to them.”)_
+
+**Bar in, kor rahes tem.**  
+_(Thus the community lived freely, always.)_
+
+**Zed sal-a gozaš-a; yaz-im mar-mar zan-e rahan-a.**  
+_(Many years passed, and the people spoke more and more of freedom.)_
+
+**Bache-im:** **Kema tora-im (es-e) bar kor?**  
+_(Children: “How many gates does the community have?”)_
+
+**Zan-gar handa-a: “Hela tora-im gosha (es-e), chera rahan nal-im gosha (es-e).”**  
+_(The scholar smiled: “All gates are open, for freedom opens the hearts.”)_
+
+**In yaz, ren nav-e bar bar, u kysman ryl-e.**  
+_(These words they sang again and again, and the sky glowed.)_
+
+**Mara loma (es-e), u shab kotah (es-e).**  
+_(The day stayed bright, and the night felt short.)_
+
+**Mur vyn-e ren, u ren vyn-e mur; u Parur kor — bar rud, bar kav, bar dasht — loma rahes-e.**  
+_(We love them, and they love us; and the Parur community—by river, by mountain, and across the plain—lives in bright freedom.)_
+
+---
+
+<div className='my-3'>
+- <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **GitHub Repository**: [paruvan-language](https://github.com/kiaksarg/paruvan-language)
+</div>
+
+**Version:** v0.9.0  
+**Author:** Arash Goodarzi  
+**License:** Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0)
