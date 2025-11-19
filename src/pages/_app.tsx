@@ -51,10 +51,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       >
         {/* ---------- Header (No Border) ---------- */}
         <header className="sticky top-0 bg-white dark:bg-black z-50">
-          {/* Main flex container: justify-between pushes left/right groups apart */}
-          <div className="mx-auto max-w-screen-lg flex items-center justify-between px-4 py-4">
+          {/* Main flex container */}
+          <div className="mx-auto max-w-screen-lg flex items-center px-4 py-4 gap-3">
             {/* Left Group: Logo + Main Navigation */}
-            <div className="flex items-center gap-3 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-6 min-w-0">
               <Link href="/" aria-label="Homepage Logo">
                 <Image
                   src="/logo.png"
@@ -67,31 +67,25 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               </Link>
               <nav
                 className="
-                pb-0.5 sm:pb-0
-                flex items-center
-                gap-2 sm:gap-4
-                text-sm uppercase
-                overflow-x-auto
-                flex-nowrap
-                hide-scrollbar
-                min-w-0
-                nav-limit-width-below-340"
+          pb-0.5 sm:pb-0
+          flex items-center
+          gap-2 sm:gap-4
+          text-sm uppercase
+          overflow-x-auto
+          flex-nowrap
+          hide-scrollbar
+          min-w-0
+          nav-limit-width-below-340"
               >
                 <Nav href="/">Home</Nav>
                 <Nav href="/projects">Projects</Nav>
                 <Nav href="/teaching">Teaching</Nav>
-                <Link
-                  href="/blog"
-                  className="hidden sm:inline-block text-black dark:text-white hover:text-blue-400 transition-colors duration-200 font-medium tracking-wide"
-                >
-                  Blog
-                </Link>
+                <Nav href="/blog">Blog</Nav>
               </nav>
             </div>
 
             {/* Right Group: GitHub Link + CV Link + Theme Toggle */}
-            <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-              {/* GitHub Link */}
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 ml-auto">
               <a
                 href={GITHUB_URL}
                 target="_blank"
@@ -99,15 +93,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 aria-label="GitHub Profile"
                 title="GitHub Profile"
                 className="
-      text-gray-500 dark:text-gray-400  /* Base color (Light mode slightly darker) */
-      hover:text-gray-700 dark:hover:text-gray-300 /* Hover color */
-      transition-colors duration-200
-    "
+          text-gray-500 dark:text-gray-400
+          hover:text-gray-700 dark:hover:text-gray-300
+          transition-colors duration-200
+        "
               >
                 <FaGithub size={ICON_SIZE} />
               </a>
 
-              {/* CV Link */}
               <a
                 href={CV_URL}
                 target="_blank"
@@ -115,20 +108,17 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 aria-label="Download CV"
                 title="Download CV"
                 className="
-      text-gray-500 dark:text-gray-400 /* Base color (Light mode slightly darker) */
-      hover:text-gray-700 dark:hover:text-gray-300 /* Hover color */
-      transition-colors hidden sm:inline-block duration-200
-    "
+          text-gray-500 dark:text-gray-400
+          hover:text-gray-700 dark:hover:text-gray-300
+          transition-colors duration-200
+        "
               >
                 <TbFileCv size={ICON_SIZE} />
               </a>
 
-              {/* Theme Toggle */}
               <ThemeToggle />
             </div>
           </div>
-          {/* Optional: Add separate nav for mobile view if main nav is hidden */}
-          {/* <nav className="sm:hidden px-4 pb-4"> ... mobile nav links ... </nav> */}
         </header>
 
         {/* ---------- Page ---------- */}
