@@ -5,8 +5,8 @@ import Link from "next/link";
 const redirects: Record<string, string> = {
   bm: "/projects/danish-business-management-platform",
   viewshift: "/projects/viewshift",
-  scroll: "/projects/scrolllab",
-  scrl: "/scrolllab",
+  scroll: "/projects/inertial-scrolling",
+  scrl: "/projects/inertial-scrolling",
 };
 
 // Pre-generate static pages for each alias (required for `next export`)

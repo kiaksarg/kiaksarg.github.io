@@ -1,0 +1,78 @@
+---
+title: "Alternative Inertial Scrolling Techniques"
+slug: inertial-scrolling
+cover: scrolling/scrolling-cover.jpg
+excerpt: "Experimental prototype comparing inertial scrolling variants (Normal, Limited Distance, Limited Distance + Highlight) based on Prof. Viktor Kaptelinin’s inertial scrolling method."
+tags: [HCI, Interaction Techniques, Web Prototyping, UX Research]
+skills: [Research, Prototyping, Full-Stack Development, Experiment Design]
+date: 2025-10-01
+showOnHome: true
+priority: 4
+description: "Web-based experimental demo and study prototype for evaluating alternative inertial (kinetic) scrolling techniques."
+links:
+  - label: "Demo"
+    href: "https://arashg.dev/scrolllab/"
+  - label: "Type III — Limited Distance"
+    href: "https://arashg.dev/scrolllab/?type=III&content=T3"
+  - label: "Type IV — Limited + Highlighted"
+    href: "https://arashg.dev/scrolllab/?type=IV&content=T1"
+  - label: "Type II — Highlighted Break-Contact (not in study)"
+    href: "https://arashg.dev/scrolllab/?type=II&content=TEXT"
+  - label: "Study deployment"
+    href: "https://scroll-lab.informatik.umu.se/"
+  - label: "GitHub"
+    href: "https://github.com/kiaksarg/scrolllab"
+  - label: "Patent (Prof. Viktor Kaptelinin)"
+    href: "https://patents.google.com/patent/US12399610B2/en"
+---
+
+
+
+
+
+    <div className="relative mx-auto w-full max-w-lg aspect-[16/9] cursor-zoom-in my-6">
+    <ZoomImage
+      src="/scrolling/scrolling.jpg"
+      alt="inertial-scrolling"
+      fill
+      className="object-cover"
+    />
+  </div>
+
+This project presents an experimental demo and study of alternative inertial scrolling techniques, implemented under the supervision of Prof. Viktor Kaptelinin and based on his inertial scrolling method **[US Patent 12,399,610 B2](https://patents.google.com/patent/US12399610B2/en)**.
+
+# Scrolling techniques
+
+## Limited Distance (LD)
+The inertial scrolling distance is constrained by the **break-contact point** (where the user’s finger leaves the touchscreen).  
+Scrolling is limited to the distance between the break-contact point and the **window border** in the scrolling direction (it can be smaller for a weak flick, but not larger).
+
+Demo: **[Type III — Limited Distance](https://arashg.dev/scrolllab/?type=III&content=T3)**
+
+## Highlighted Break-Contact
+A highlight-only variant (without limited distance). This was implemented in the demo but excluded from the final study design.
+
+Demo: **[Type II — Highlighted Break-Contact](https://arashg.dev/scrolllab/?type=II&content=TEXT)**
+
+
+## Limited Distance + Highlight (LDH)
+Same as **LD**, but additionally highlights the document area touched at the break-contact point during inertial scrolling—like leaving a temporary “fingerprint” on the content.
+
+Demo: **[Type IV — Limited + Highlighted](https://arashg.dev/scrolllab/?type=IV&content=T1)**
+
+<div className="mt-4 ">
+  For more details, see{" "} 
+  **[US Patent&nbsp;12,399,610&nbsp;B2](https://patents.google.com/patent/US12399610B2/en)**.
+</div>
+
+
+
+# Links
+
+
+<div className="flex items-center space-x-2">
+ - <ScrollText className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **Patent (Prof. Viktor Kaptelinin)**: [US Patent 12,399,610 B2](https://patents.google.com/patent/US12399610B2/en)
+ - <Scroll className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **Techniques demo**: [arashg.dev/scrolllab](https://arashg.dev/scrolllab)
+ - <Github className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **GitHub Repository**: [kiaksarg/scrolllab](https://github.com/kiaksarg/scrolllab)
+ - <Scroll className="inline-block w-5 h-5 mr-2 align-text-bottom text-gray-600 dark:text-gray-300" /> **Study demo**: [scroll-lab.informatik.umu.se](https://scroll-lab.informatik.umu.se/)
+</div>

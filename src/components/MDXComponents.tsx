@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import type { MDXComponents } from "mdx/types";
 import React from "react";
 import Link from "next/link";
-import { Github, Globe, Youtube, Link2, FileText } from "lucide-react";
+import { Github, Globe, Youtube, Link2, FileText, Scroll, ScrollText } from "lucide-react";
 import { ZoomImage } from "./ZoomImage";
 import Head from "next/head";
 
@@ -62,6 +62,8 @@ export const mdxComponents: MDXComponents = {
   Youtube,
   Link2,
   FileText,
+  Scroll,
+  ScrollText,
   Head,
 
   /* --- Tables (padding + borders + zebra + responsive) --- */
