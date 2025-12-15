@@ -47,12 +47,21 @@ const A: MDXComponents["a"] = ({ href, children, ...rest }) => {
 
 export const mdxComponents: MDXComponents = {
   /* --- Headings --- */
-  h1: (props) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
-  h2: (props) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} />,
+  h1: (props) => <h1 className="text-3xl font-bold mt-10 mb-4" {...props} />,
+  h2: (props) => <h2 className="text-2xl font-semibold mt-8 mb-3" {...props} />,
+  h3: (props) => <h3 className="text-xl font-semibold mt-6 mb-2" {...props} />,
+  h4: (props) => <h4 className="text-lg font-semibold mt-5 mb-2" {...props} />,
+  h5: (props) => <h5 className="text-base font-semibold mt-4 mb-2" {...props} />,
+  h6: (props) => <h6 className="text-sm font-semibold mt-4 mb-2 uppercase tracking-wide" {...props} />,
 
   /* --- Text --- */
   a: A,
-
+ hr: (props) => (
+    <hr
+      {...props}
+      className="my-4 border-0 border-t border-zinc-200 dark:border-zinc-800"
+    />
+  ),
   /* --- Images & Zoom --- */
   ZoomImage,
 
