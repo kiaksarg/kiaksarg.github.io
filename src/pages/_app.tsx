@@ -47,10 +47,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black dark:bg-black dark:text-white scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface  text-black dark:bg-black dark:text-white scroll-smooth`}
       >
         {/* ---------- Header (No Border) ---------- */}
-        <header className="sticky top-0 bg-white dark:bg-black z-50">
+        <header className="sticky top-0 bg-surface dark:bg-black z-50">
           {/* Main flex container */}
           <div className="mx-auto max-w-screen-lg flex items-center px-4 py-4 gap-3">
             {/* Left Group: Logo + Main Navigation */}

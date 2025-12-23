@@ -31,7 +31,7 @@ export default function HomePage() {
   const showLoadMoreButton =
     actualFilteredCount !== null && displayLimit < actualFilteredCount;
   return (
-    <section className="container mx-auto px-6 py-12 space-y-16 bg-white text-black dark:bg-black dark:text-white">
+    <section className="container mx-auto px-6 py-12 space-y-16 bg-surface text-black dark:bg-black dark:text-white">
       {/* Hero */}
       <div className="space-y-4">
         <h1 className="text-4xl pb-6 text-black dark:text-white">
