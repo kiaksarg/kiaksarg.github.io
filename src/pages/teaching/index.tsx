@@ -14,8 +14,8 @@ const TeachingPage: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-12 max-w-3xl bg-white text-black dark:bg-black dark:text-white">
-      <h1 className="text-3xl font-bold mb-6 border-b pb-2 border-gray-300 dark:border-gray-700 text-black dark:text-white">
+    <div className="container mx-auto px-6 py-12 max-w-3xl bg-surface text-black dark:bg-black dark:text-white">
+      <h1 className="text-3xl font-bold mb-6  pb-2 text-black dark:text-white">
         Teaching
       </h1>
 
