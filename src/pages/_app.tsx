@@ -57,10 +57,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <div className="flex items-center gap-3 sm:gap-6 min-w-0">
               <Link href="/" aria-label="Homepage Logo">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="Logo"
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                   className="rounded"
                   priority
                 />
