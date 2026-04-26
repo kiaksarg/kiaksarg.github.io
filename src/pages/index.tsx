@@ -34,19 +34,16 @@ export default function HomePage() {
     <section className="container mx-auto px-6 py-12 space-y-16 bg-surface text-black dark:bg-black dark:text-white">
       {/* Hero */}
       <div className="space-y-4">
-        {/* Added 'group', 'relative', 'inline-block', and 'cursor-help' for the tooltip */}
         <h1 className="relative inline-block text-4xl pb-6 text-black dark:text-white group transition-colors">
           Arash Goodarzi
-          {/* 1. SEO and Accessibility hidden text (Read by screen readers, seen by Google) */}
           <span className="sr-only">
-            (alternatively spelled Arash Goudarzi)
+            (alternatively spelled: Arash Goudarzi)
           </span>
-          {/* 2. Visual Tooltip (Seen by humans on hover, hidden from screen readers to prevent double-reading) */}
           <span
             aria-hidden="true"
-            className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-max px-3 py-1.5 text-sm font-normal text-white bg-gray-800 dark:bg-gray-200 dark:text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
+            className="absolute bottom-full left-0 mb-2 invisible group-hover:visible w-max px-3 py-1.5 text-sm font-normal text-white bg-gray-800 dark:bg-gray-200 dark:text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
           >
-           Arash Goudarzi
+            Arash Goudarzi
           </span>
         </h1>
         <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
