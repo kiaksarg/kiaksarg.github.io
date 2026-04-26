@@ -9,7 +9,7 @@ export default function HomePage() {
   const [displayLimit, setDisplayLimit] = useState(INITIAL_LOAD_COUNT);
   // State: The *actual* number of projects matching the filter (reported by ProjectGrid)
   const [actualFilteredCount, setActualFilteredCount] = useState<number | null>(
-    null
+    null,
   );
 
   // Callback function passed to ProjectGrid to receive the filtered count
@@ -22,7 +22,7 @@ export default function HomePage() {
   const handleLoadMore = () => {
     setDisplayLimit((prevLimit) =>
       // Increase the limit, capped by the actual number available after filtering
-      Math.min(prevLimit + LOAD_MORE_INCREMENT, actualFilteredCount ?? 0)
+      Math.min(prevLimit + LOAD_MORE_INCREMENT, actualFilteredCount ?? 0),
     );
   };
 
@@ -34,8 +34,20 @@ export default function HomePage() {
     <section className="container mx-auto px-6 py-12 space-y-16 bg-surface text-black dark:bg-black dark:text-white">
       {/* Hero */}
       <div className="space-y-4">
-        <h1 className="text-4xl pb-6 text-black dark:text-white">
-          Arash Goodarzi
+        {/* Added 'group', 'relative', 'inline-block', and 'cursor-help' for the tooltip */}
+        <h1 className="relative inline-block text-4xl pb-6 text-black dark:text-white group transition-colors">
+          Arash Goodarzi
+          {/* 1. SEO and Accessibility hidden text (Read by screen readers, seen by Google) */}
+          <span className="sr-only">
+            (alternatively spelled Arash Goudarzi)
+          </span>
+          {/* 2. Visual Tooltip (Seen by humans on hover, hidden from screen readers to prevent double-reading) */}
+          <span
+            aria-hidden="true"
+            className="absolute bottom-full left-0 mb-2 hidden group-hover:block w-max px-3 py-1.5 text-sm font-normal text-white bg-gray-800 dark:bg-gray-200 dark:text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
+          >
+           Arash Goudarzi
+          </span>
         </h1>
         <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
           Hello! I am a dedicated interaction designer and full-stack developer
@@ -44,11 +56,10 @@ export default function HomePage() {
           Human-Computer Interaction (HCI), Extended Reality (XR), and
           Artificial Intelligence (AI) technologies mediate user interactions
           and experiences. I approach my work through a multidisciplinary lens
-           that integrates computer science and AI with HCI approaches. 
-           I am particularly interested in developing
-          novel interaction techniques within immersive environments,
-          aiming to create solutions that enhance user experience and
-          interaction effectiveness.
+          that integrates computer science and AI with HCI approaches. I am
+          particularly interested in developing novel interaction techniques
+          within immersive environments, aiming to create solutions that enhance
+          user experience and interaction effectiveness.
         </p>
         {/* <p className="text-sm text-gray-600 dark:text-gray-400">
           Available 40+ hrs/week • CET (UTC+1)

@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ThemeProvider } from "next-themes";
 import ThemeToggle from "../theme/theme-toggle";
-import { FaGithub } from "react-icons/fa"; // Import GitHub icon from Font Awesome set
-import { TbFileCv } from "react-icons/tb"; // Import CV icon from Tabler Icons set
+import { FaGithub } from "react-icons/fa";
+import { TbFileCv } from "react-icons/tb";
 import MDXWrapper from "../components/MDXComponents";
 
 import "react-medium-image-zoom/dist/styles.css";
@@ -21,12 +21,18 @@ const geistMono = Geist_Mono({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  // Use the provided GitHub URL
   const GITHUB_URL = "https://github.com/kiaksarg";
-  // Assumed CV path based on previous examples (update if different)
   const CV_URL = "/arashg_cv.pdf";
-  // Define icon size
-  const ICON_SIZE = 19; // Smaller icon size (default is 24)
+  const ICON_SIZE = 19;
+
+  // JSON-LD structured data for SEO
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Arash Goodarzi",
+    alternateName: "Arash Goudarzi",
+    jobTitle: "Interaction Designer & Full-stack Developer",
+  };
 
   return (
     <ThemeProvider
@@ -36,24 +42,25 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       disableTransitionOnChange
     >
       <Head>
-        {/* SVG for modern, sharp scaling */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        {/* Fallback PNGs */}
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
           href="/favicon-32x32.png"
         />
+        {/* Inject Schema.org JSON-LD for professional SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
       </Head>
       <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface  text-black dark:bg-black dark:text-white scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface text-black dark:bg-black dark:text-white scroll-smooth`}
       >
-        {/* ---------- Header (No Border) ---------- */}
+        {/* ---------- Header ---------- */}
         <header className="sticky top-0 bg-surface dark:bg-black z-50">
-          {/* Main flex container */}
           <div className="mx-auto max-w-screen-lg flex items-center px-4 py-4 gap-3">
-            {/* Left Group: Logo + Main Navigation */}
             <div className="flex items-center gap-3 sm:gap-6 min-w-0">
               <Link href="/" aria-label="Homepage Logo">
                 <Image
@@ -84,7 +91,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               </nav>
             </div>
 
-            {/* Right Group: GitHub Link + CV Link + Theme Toggle */}
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 ml-auto">
               <a
                 href={GITHUB_URL}
@@ -127,15 +133,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </MDXWrapper>
         </main>
-
-        {/* ---------- Footer (Optional) ---------- */}
-        {/* ... */}
       </div>
     </ThemeProvider>
   );
 }
 
-// NavLink component remains the same
 function Nav({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link
