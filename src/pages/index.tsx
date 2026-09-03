@@ -36,15 +36,6 @@ export default function HomePage() {
       <div className="space-y-4">
         <h1 className="relative inline-block text-4xl pb-6 text-black dark:text-white group transition-colors">
           Arash Goodarzi
-          <span className="sr-only">
-            (alternatively spelled: Arash Goudarzi)
-          </span>
-          <span
-            aria-hidden="true"
-            className="absolute bottom-full left-0 mb-2 invisible group-hover:visible w-max px-3 py-1.5 text-sm font-normal text-white bg-gray-800 dark:bg-gray-200 dark:text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
-          >
-            Arash Goudarzi
-          </span>
         </h1>
         <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
           Hello! I am a dedicated interaction designer and full-stack developer
@@ -58,16 +49,6 @@ export default function HomePage() {
           within immersive environments, aiming to create solutions that enhance
           user experience and interaction effectiveness.
         </p>
-        {/* <p className="text-sm text-gray-600 dark:text-gray-400">
-          Available 40+ hrs/week • CET (UTC+1)
-        </p> */}
-        {/* <Link
-          href="/about-me"
-          className="inline-block mt-4 px-6 py-2 border border-gray-800 dark:border-gray-200 rounded
-                     hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        >
-          About Me
-        </Link> */}
       </div>
 
       {/* Projects */}
