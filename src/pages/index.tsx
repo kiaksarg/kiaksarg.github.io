@@ -38,16 +38,9 @@ export default function HomePage() {
           Arash Goodarzi
         </h1>
         <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
-          Hello! I am a dedicated interaction designer and full-stack developer
-          with a passion for building and optimizing interactive systems,
-          websites, and applications. My research pertains to understanding how
-          Human-Computer Interaction (HCI), Extended Reality (XR), and
-          Artificial Intelligence (AI) technologies mediate user interactions
-          and experiences. I approach my work through a multidisciplinary lens
-          that integrates computer science and AI with HCI approaches. I am
-          particularly interested in developing novel interaction techniques
-          within immersive environments, aiming to create solutions that enhance
-          user experience and interaction effectiveness.
+          Hello! I am a PhD student in Computing Science at the University of Glasgow. 
+          I study interaction techniques for Extended Reality (XR) that support ergonomic and productive work in immersive environments. 
+          Previously, I worked as a full-stack developer, building and optimizing websites and applications.
         </p>
       </div>
 
