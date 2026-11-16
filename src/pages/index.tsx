@@ -38,8 +38,16 @@ export default function HomePage() {
           Arash Goodarzi
         </h1>
         <p className="text-xl text-justify text-gray-700 dark:text-gray-300">
-          Hello! I am a PhD student in Computing Science at the University of Glasgow. 
-          I study interaction techniques for Extended Reality (XR) that support ergonomic and productive work in immersive environments. 
+          Hello! I am a PhD student in Computing Science at the University of Glasgow, within the{" "}
+          <a
+            href="https://sabgla.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-900 dark:hover:text-white"
+          >
+            Multimodal Interaction Group (MIG)
+          </a>
+          . I study interaction techniques for Extended Reality (XR) that support ergonomic and productive work in immersive environments.
           Previously, I worked as a full-stack developer, building and optimizing websites and applications.
         </p>
       </div>
